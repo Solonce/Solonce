@@ -17,14 +17,14 @@ body {
 }
 
 .title-element {
-   font-size: 330px;
+   font-size: 15vw;
    line-height: 0.65;
 }
 
 .title-element::after {
    content: "";
    display: block;
-   width: 1500px;
+   width: 75vw;
    bottom: -50px;
    height: 4px;
    background-color: black;
@@ -36,39 +36,40 @@ body {
 .article {
     position: relative;
     width: 50%; /* Takes up the full width of its container */
-    padding: 0px; /* Adjust this value according to your design needs */
+    padding-bottom: 30px; /* Adjust this value according to your design needs */
     left: 20%;
     display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center items vertically */
+    align-items: flex-start; /* Center items vertically */
     gap: 20px; /* Space between the image and the text content */
 }
 
 .article-body {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    width: 50%;
-    font-size: 30px;
+    width: 40vw;
+    height: 15vw;
+    font-size: 20vw;
 }
 
 .article-left{
 	text-align: left;
+    left: 25%;
 }
 
 .article-right {
 	text-align: right;
+    right: 75%;
 }
 
 .article img {
     position: relative;
-    width: 200px; /* Set width */
-    height: 200px; /* Set height */
+    width: 15vw; /* Set width */
+    height: 15vw; /* Set height */
     object-fit: cover; /* Ensures image retains its aspect ratio, cropping if needed */
 }
 
 .article-content {
-    width: calc(100% - 420px); /* Adjust width, considering image width and gap */
+    width: calc(100% - 5vw); /* Adjust width, considering image width and gap */
     display: flex;
+
     flex-direction: column;
     gap: 10px; /* Space between the title and the description */
 }
@@ -76,7 +77,7 @@ body {
 .article-content::after {
     content: "";
     display: block;
-    width: 500px;
+    width: 45vw;
     bottom: 5px;
     height: 4px;
     background-color: black;
@@ -101,7 +102,11 @@ header, nav, ul, li, a {
     text-align: right;
     color: black;
     font-family: 'Helvetica';
-    font-size: 40px
+    font-size: 40px;
+}
+
+a {
+    font-size: 3vw;
 }
 
 a:hover {
