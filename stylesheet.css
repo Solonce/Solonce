@@ -1,3 +1,8 @@
+@font-face {
+    font-family: newspaper;
+    src: url("fonts/steelfish.otf");
+}
+
 /* Reset default margins and padding */
 body, h1 {
     margin: 0;
@@ -7,81 +12,134 @@ body, h1 {
 /* Set the background color */
 body {
     background-color: #faf8d7;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica;
 }
 
 /* Style the container */
 .centered-element {
     text-align: center;
-    padding-bottom: 150px;
+    padding-bottom: 5vw;
 }
 
 .title-element {
-   font-size: 15vw;
-   line-height: 0.65;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15vw;
+}
+
+.title-element p {
+    font-family: newspaper;
+    transform:scale(2, 2);
+    height: 10vw;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3.3vw;
+    margin-bottom: auto;    
 }
 
 .title-element::after {
    content: "";
    display: block;
-   width: 75vw;
-   bottom: -50px;
    height: 4px;
    background-color: black;
-   position: relative;
-   left: 50%; /* Position the left edge of the ::after element at the center of the .title-element */
-   transform: translateX(-50%);
+   margin-top: 10vw;
+   width: 80vw;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 .article {
     position: relative;
-    width: 50%; /* Takes up the full width of its container */
     padding-bottom: 30px; /* Adjust this value according to your design needs */
-    left: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
     display: flex; /* Use flexbox for layout */
-    align-items: flex-start; /* Center items vertically */
+    align-items: flex-end /* Center items vertically */
     gap: 20px; /* Space between the image and the text content */
 }
 
 .article-body {
+    display: block;
+    justify-content: center;
     width: 40vw;
     height: 15vw;
-    font-size: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.35vw;
+    bottom: 100px;
+}
+
+.article-right {
+    text-align: right;
+    justify-content: right;
+    padding-right: 50px;
+}
+
+
+.article-right::after{
+    content: "";
+    display: flex;
+    width: 35vw;
+    bottom: 5px;
+    height: 4px;
+    background-color: black;
+}
+
+.article-right p{
+    max-width: 30vw;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+
+}
+
+
+.article-left p{
+    max-width: 30vw;
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+
 }
 
 .article-left{
 	text-align: left;
-    left: 25%;
+    justify-content: left;
+    padding-left: 50px;
 }
 
-.article-right {
-	text-align: right;
-    right: 75%;
+.article-left::after{
+    content: "";
+    display: flex;
+    width: 35vw;
+    bottom: 5px;
+    height: 4px;
+    background-color: black;
 }
 
 .article img {
-    position: relative;
+    disply: inline-block;
     width: 15vw; /* Set width */
     height: 15vw; /* Set height */
     object-fit: cover; /* Ensures image retains its aspect ratio, cropping if needed */
 }
 
-.article-content {
-    width: calc(100% - 5vw); /* Adjust width, considering image width and gap */
-    display: flex;
+.article a{
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-end /* Center items vertically */
+    gap: 20px; /* Space between the image and the text content */
+    font-size: 1.35vw;
+    max-width: 30vw;
 
-    flex-direction: column;
-    gap: 10px; /* Space between the title and the description */
 }
 
-.article-content::after {
-    content: "";
-    display: block;
-    width: 45vw;
-    bottom: 5px;
-    height: 4px;
-    background-color: black;
-    position: relative;
+.article-content {
+    display: inline-block;
+    font-family: 'Helvetica';
+    gap: 10px; /* Space between the title and the description */
 }
 
 .article-title {
@@ -89,11 +147,14 @@ body {
     font-weight: bold;
 }
 
+.date {
+    font-size: 1.35vw;
+    top: 20vw;
+    text-align: right;
+    position: relative;
+}
 
-
-
-/* Style the full-width title */
-header, nav, ul, li, a {
+.link {
     margin: 0;
     padding: 10px;
     text-decoration: none;
@@ -101,25 +162,45 @@ header, nav, ul, li, a {
     position: relative;
     text-align: right;
     color: black;
-    font-family: 'Helvetica';
-    font-size: 40px;
-}
-
-a {
+    font-family: newspaper;
     font-size: 3vw;
 }
 
-a:hover {
+.link a:hover {
     color: #141414;
 }
 
-a:visited {
+.link a:visited {
     color: black;
 }
 
-a:active {
+.link a:active {
     color: black;
 }
+
+
+.code-snippet {
+    display: block;
+    background: rgba(0, 0, 0, .125);
+    width: 75%;
+    margin: auto;
+
+}
+
+
+/* Style the full-width title */
+header, nav, ul {
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    list-style-type: none;
+    position: relative;
+    text-align: right;
+    color: black;
+    font-family: newspaper;
+    font-size: 40px;
+}
+
 
 
 h1 {

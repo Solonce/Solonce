@@ -10,14 +10,17 @@
     <nav>
         <ul>
             <li>
-                <a href="index.html">HOME</a> 
-                <a href="about.html">ABOUT ME</a>
-                <a href="about.html">CONTACT</a>
+                <a href="index.html" class="link">HOME</a> 
+                <a href="about.html" class="link">ABOUT ME</a>
+                <a href="contact.html" class="link">CONTACT</a>
             </li>
         </ul>
     </nav>
 
-    <h1 class="centered-element title-element">SOLONCE</h1>
+    <h1 class="centered-element title-element">
+        <p>SOLONCE</p>
+        <p id="currentDateTime" class="date"></p>
+    </h1>
 
     <div class="article-body">
         <p>
@@ -41,6 +44,6 @@
         </p>
     </div>
 
-
+    <script src="getTime.js"></script>
 </body>
 </html>

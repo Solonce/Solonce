@@ -10,37 +10,48 @@
     <nav>
         <ul>
             <li>
-                <a href="index.html">HOME</a> 
-                <a href="about.html">ABOUT ME</a>
-                <a href="about.html">CONTACT</a>
+                <a href="index.html" class="link">HOME</a> 
+                <a href="about.html" class="link">ABOUT ME</a>
+                <a href="contact.html" class="link">CONTACT</a>
             </li>
         </ul>
     </nav>
 
-    <h1 class="centered-element title-element">SOLONCE</h1>
+    <h1 class="centered-element title-element">
+        <p>SOLONCE</p>
+        <p id="currentDateTime" class="date"></p>
+    </h1>
 
     <div class="article">
-        <img src="profile_new.png" alt="Image description">
-        <div class="article-content article-left">
-            <div class="article-title">How to set up a systemmd service using systemctl</div>
-            <p>Setting up a systemd using systemctl is really easy and useful. In this case we will set it up to run a python script 24/7 on our linux based machine.</p>
-        </div>
+        <a href="Sccript Permanance with Systemd.html" class="link">
+            <img src="systemd_img.png" alt="Image description">
+            <div class="article-content article-left">
+                <div class="article-title">How to set up a systemmd service using systemctl</div>
+                <p>Setting up a systemd using systemctl is really easy and useful. In this case we will set it up to run a python script 24/7 on our linux based machine.</p>
+            </div>
+        </a>
+    </div>
+    <!--
+    <div class="article">
+        <a href="contact.html" class="link">
+            <div class="article-content article-right">
+                <div class="article-title">How to set up a systemmd service using systemctl</div>
+                <p>Setting up a systemd using systemctl is really easy and useful. In this case we will set it up to run a python script 24/7 on our linux based machine.</p>
+            </div>
+            <img src="profile_new.png" alt="Image description">
+        </a>
     </div>
     <div class="article">
-        <div class="article-content article-right">
-            <div class="article-title">How to set up a systemmd service using systemctl</div>
-            <p>Setting up a systemd using systemctl is really easy and useful. In this case we will set it up to run a python script 24/7 on our linux based machine.</p>
-        </div>
-        <img src="profile_new.png" alt="Image description">
+        <a href="contact.html" class="link">
+            <img src="profile_new.png" alt="Image description">
+            <div class="article-content article-left">
+                <div class="article-title">How to set up a systemmd service using systemctl</div>
+                <p>Setting up a systemd using systemctl is really easy and useful. In this case we will set it up to run a python script 24/7 on our linux based machine.</p>
+             </div>
+        </a>
     </div>
-    <div class="article">
-        <img src="profile_new.png" alt="Image description">
-        <div class="article-content article-left">
-            <div class="article-title">How to set up a systemmd service using systemctl</div>
-            <p>Setting up a systemd using systemctl is really easy and useful. In this case we will set it up to run a python script 24/7 on our linux based machine.</p>
-        </div>
-    </div>
+    -->
 
-
+	<script src="getTime.js"></script>
 </body>
 </html>

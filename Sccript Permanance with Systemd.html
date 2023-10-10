@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOLONCE Blog</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+
+    <!-- The full-width title -->
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html" class="link">HOME</a> 
+                <a href="about.html" class="link">ABOUT ME</a>
+                <a href="contact.html" class="link">CONTACT</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1 class="centered-element title-element">
+        <p>SOLONCE</p>
+        <p id="currentDateTime" class="date"></p>
+    </h1>
+
+    <div class="article-body">
+        <p>
+            How to run a scheduled script on a linux based machine using daemon and systemd.
+        </p>
+
+        <p>
+            Whatever script/executable file you wish to schedule with systemd, you need to ensure that it has appropriate permissions. This can be done via:
+        </p>
+
+        <div class="code-snippet">
+            <p>
+                > sudo chmod +x /path/to/your/script.py
+            </p>
+        </div>
+
+        <p>
+            Then you'll need to create a .service file in the /etc/systemd/system directory. This can be acheived via the command:
+        </p>
+
+        <div class="code-snippet">
+            <p>
+                > sudo nano /et/systemd/system/your_service_name.service
+            </p>
+        </div>
+
+        <p>
+            After you have set the appropiate permissions, and created the service file. You will need to alter the service file to something of this effect:
+        </p>
+
+        <div class="code-snippet">
+            <p>
+                [Unit]<br>
+                Description=My Python Script Service<br>
+                After=network.target<br><br>
+
+                [Service]<br>
+                ExecStart=/usr/bin/python3 /path/to/your/script.py<br>
+                User=yourusername<br>
+                Working Directory=/path/to/script/directory<br>
+                Restart=always<br>
+                RestartSec=3<br><br>
+
+                [Install]<br>
+                WantedBy=multi-user.target<br>
+            </p>
+        </div>
+
+        <p>
+            Brief Overview:<br><br>
+            -ExecStart takes the location of your python installation and the script<br>
+            -User defines the user that the service will act within<br>
+            -WorkingDirectory defines the directory that the service and script will work within<br>
+            -Restart defines if that service will restart if the program terminates in any way<br>
+            -RestartSec defines the length of time to wait before restarting the script should it terminate<br>
+        </p>
+
+        <p>
+            Then, to ensure that daemon is properly set up, you can run the command:
+        </p>
+        
+        <div class="code-snippet">
+            <p>
+                > sudo systemctl daemon-reload
+            </p>
+        </div>
+
+        <p>
+            Next, to start your service run the command:
+        </p>
+        
+        <div class="code-snippet">
+            <p>
+                > sudo systemctl start your_service_name.service
+            </p>
+        </div>
+
+        <p>
+            If you want to force this service to start on boot, run this command:
+        </p>
+        
+        <div class="code-snippet">
+            <p>
+                > sudo systemctl enable your_service_name.service
+            </p>
+        </div>
+
+        <p>
+            To check the status you can run this command:
+        </p>
+        
+        <div class="code-snippet">
+            <p>
+                > sudo systemctl status your_service.name
+            </p>
+        </div>
+
+        <p>
+            Lastly, to see an extended output of the script via this command:
+        </p>
+        
+        <div class="code-snippet">
+            <p>
+                > journalctl -u your_service_name.service
+            </p>
+        </div>
+    </div>
+
+    <script src="getTime.js"></script>
+</body>
+</html>
