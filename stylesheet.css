@@ -26,6 +26,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 15vw;
+    background-color: transparent;
 }
 
 .title-element p {
@@ -59,6 +60,7 @@ body {
     display: flex; /* Use flexbox for layout */
     align-items: flex-end /* Center items vertically */
     gap: 20px; /* Space between the image and the text content */
+    background-color: transparent;
 }
 
 .article-body {
@@ -138,6 +140,7 @@ body {
 
 .article-content {
     display: inline-block;
+    background-color: transparent;
     font-family: 'Helvetica';
     gap: 10px; /* Space between the title and the description */
 }
@@ -145,6 +148,7 @@ body {
 .article-title {
     font-size: 1.5em; /* Adjust size as needed */
     font-weight: bold;
+    background-color: transparent;
 }
 
 .date {
@@ -201,7 +205,9 @@ header, nav, ul {
     font-size: 40px;
 }
 
-
+canvas {
+    z-index: -1;
+}
 
 h1 {
     font-size: 3em;

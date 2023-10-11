@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-
+    <canvas id="myCanvas" style="position: absolute;"></canvas>
     <!-- The full-width title -->
     <nav>
         <ul>
@@ -17,7 +17,7 @@
         </ul>
     </nav>
 
-    <h1 class="centered-element title-element">
+    <h1 id="title" class="centered-element title-element">
         <p>SOLONCE</p>
         <p id="currentDateTime" class="date"></p>
     </h1>
@@ -43,7 +43,7 @@
             For collaborations, inquiries, or just to chat about the latest in machine learning, music, or art, feel free to reach out to me on GitHub, Instagram, email, LinkedIn, or through my website.
         </p>
     </div>
-
+    <script src="background.js"></script>
     <script src="getTime.js"></script>
 </body>
 </html>
