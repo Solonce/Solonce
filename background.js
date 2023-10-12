@@ -7,6 +7,7 @@ let width = window.innerWidth;
 let height = document.documentElement.scrollHeight;
 const canvas = document.getElementById("myCanvas")
 const ctx = canvas.getContext("2d")
+let title = document.getElementById("title").getBoundingClientRect()
 ctx.canvas.width = width
 ctx.canvas.height = height
 
@@ -46,7 +47,6 @@ async function build() {
 				if(choice == 1){
 					points[i][0] = points[i][0] + Math.floor(points[i][3]/switchDirection)
 				} else if (choice == 2) {
-					console.log("hejei")
 					points[i][0] = points[i][0] - Math.floor(points[i][3]/switchDirection)
 				} else {
 					points[i][1] = points[i][1] + Math.floor(points[i][3]/switchDirection)
@@ -54,8 +54,6 @@ async function build() {
 				ctx.lineWidth = ((i+1)/numPoints) * 3
 				ctx.lineTo(points[i][0], points[i][1])
 				let alpha = ((i+1)/numPoints) * .25
-				let title = document.getElementById("title").getBoundingClientRect()
-				console.log(title.bottom)
 				if(points[i][1] >= title.bottom/2) {
 					alpha = alpha * (1 - (points[i][1]/title.bottom))
 				}

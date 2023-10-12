@@ -13,12 +13,13 @@ body, h1 {
 body {
     background-color: #faf8d7;
     font-family: Arial, Helvetica;
+    overflow-x: hidden;
 }
 
 /* Style the container */
 .centered-element {
     text-align: center;
-    padding-bottom: 5vw;
+    padding-bottom: 1vw;
 }
 
 .title-element {
@@ -33,7 +34,7 @@ body {
     font-family: newspaper;
     transform:scale(2, 2);
     height: 10vw;
-    width: 40vw;
+    width: 30vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3.3vw;
@@ -46,7 +47,7 @@ body {
    height: 4px;
    background-color: black;
    margin-top: 10vw;
-   width: 80vw;
+   width: 70vw;
    margin-left: auto;
    margin-right: auto;
 }
@@ -63,16 +64,50 @@ body {
     background-color: transparent;
 }
 
+.article-container {
+    display: flex;
+    width: 45vw;
+    line-height: 4vw;
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.article-title-head {
+    font-family: newspaper;
+    max-width: 20vw;
+    margin-bottom: 1vw;
+    margin-top: 0;
+    align-self: flex-end;
+    font-size: 4vw  !important
+}
+
+.article-title-desc {
+    font-family: newspaper;
+    margin-bottom: 1vw;
+    margin-left: .25vw;
+    margin-top: 0;
+    align-self: flex-end;
+    word-spacing: 0.2vw;
+    max-width: 22.5vw;
+    line-height: 2vw;
+    font-size: 1.5vw !important
+
+}
+
 .article-body {
     display: block;
     justify-content: center;
     width: 40vw;
-    height: 15vw;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.35vw;
     bottom: 100px;
+    padding: 2.5vw;
+    background-color: rgba(0, 0, 0, .125); 
 }
+
 
 .article-right {
     text-align: right;
