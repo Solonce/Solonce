@@ -34,7 +34,7 @@ body {
     font-family: newspaper;
     transform:scale(2, 2);
     height: 10vw;
-    width: 30vw;
+    width: 40vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3.3vw;
@@ -46,7 +46,7 @@ body {
    display: block;
    height: 4px;
    background-color: black;
-   margin-top: 10vw;
+   margin-top: 20vw;
    width: 70vw;
    margin-left: auto;
    margin-right: auto;
@@ -92,7 +92,7 @@ body {
     word-spacing: 0.2vw;
     max-width: 22.5vw;
     line-height: 2vw;
-    font-size: 1.5vw !important
+    font-size: 1.5vw !important;
 
 }
 
@@ -176,7 +176,7 @@ body {
 .article-content {
     display: inline-block;
     background-color: transparent;
-    font-family: 'Helvetica';
+    letter-spacing: 0.05vw;
     gap: 10px; /* Space between the title and the description */
 }
 
@@ -188,9 +188,11 @@ body {
 
 .date {
     font-size: 1.35vw;
-    top: 20vw;
     text-align: right;
     position: relative;
+    height: 1vw !important;
+    top: 18vw !important;
+
 }
 
 .link {
@@ -224,6 +226,10 @@ body {
     width: 75%;
     margin: auto;
 
+}
+
+.bullet {
+	margin-left: 2vw;
 }
 
 
