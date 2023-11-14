@@ -7,33 +7,28 @@
 <body>
     <canvas id="myCanvas" style="position: absolute;"></canvas>
     <!-- The full-width title -->
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html" class="link">HOME</a> 
-                <a href="about.html" class="link">ABOUT ME</a>
-                <a href="contact.html" class="link">CONTACT</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="header">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="link">HOME</a> 
+                    <a href="about.html" class="link">ABOUT ME</a>
+                    <a href="contact.html" class="link">CONTACT</a>
+                </li>
+                <div class="header-segment"></div>
+            </ul>
+        </nav>
+    </div>
 
-    <h1 id="title" class="centered-element title-element">
+    <div id="title" class="centered-element title-element">
         <p>SOLONCE</p>
         <p id="currentDateTime" class="date"></p>
-    </h1>
+    </div>
     <div class="article-container">
-        <p class="article-title-head">ARTICLES:</p>
-        <p class="article-title-desc" style="max-width: 45vw;">A documentation and portfolio of my<br> personal growth and knowledge of the programming world.</p>
+        <h1><p class="article-title-head">ARTICLES:</p></h1>
+        <h2><p class="article-title-desc" style="max-width: 45vw;">A documentation and portfolio of my personal growth and knowledge of the programming world.</p></h2>
     </div>
-    <div class="article">
-        <a href="Sccript Permanance with Systemd.html" class="link">
-            <img src="systemd_img.png" alt="Image description">
-            <div class="article-content article-left">
-                <div class="article-title">How to set up a systemmd service using systemctl</div>
-                <p>Setting up a Systemd service using Daemon script. The goal being to set a python script to run 24/7.</p>
-            </div>
-        </a>
-    </div>
+    <div class="segment"></div>
     <div class="article">
         <a href="How to use Midjourney.html" class="link">
             <div class="article-content article-right">
@@ -43,6 +38,17 @@
             <img src="midjourney.png" alt="Image description">
         </a>
     </div>
+
+    <div class="article">
+        <a href="Sccript Permanance with Systemd.html" class="link">
+            <img src="systemd_img.png" alt="Image description">
+            <div class="article-content article-left">
+                <div class="article-title">How to set up a systemmd service using systemctl</div>
+                <p>Setting up a Systemd service using Daemon script. The goal being to set a python script to run 24/7.</p>
+            </div>
+        </a>
+    </div>
+    
     <!--
     <div class="article">
         <a href="contact.html" class="link">
@@ -54,6 +60,9 @@
         </a>
     </div>
     -->
+    <div class="footer">
+
+    </div>
 
 	<script src="getTime.js"></script>
     <script src="background.js"></script>

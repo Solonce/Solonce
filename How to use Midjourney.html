@@ -7,30 +7,35 @@
 <body>
     <canvas id="myCanvas" style="position: absolute;"></canvas>
     <!-- The full-width title -->
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html" class="link">HOME</a> 
-                <a href="about.html" class="link">ABOUT ME</a>
-                <a href="contact.html" class="link">CONTACT</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="header">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="link">HOME</a> 
+                    <a href="about.html" class="link">ABOUT ME</a>
+                    <a href="contact.html" class="link">CONTACT</a>
+                </li>
+                <div class="header-segment"></div>
+            </ul>
+        </nav>
+    </div>
 
-    <h1 id="title" class="centered-element title-element">
+    <div id="title" class="centered-element title-element">
         <p>SOLONCE</p>
         <p id="currentDateTime" class="date"></p>
-    </h1>
+    </div>
     <div class="article-container">
-        <p class="article-title-head">MIDJOURNEY <br>DEMO:</p>
-        <p class="article-title-desc">A high-level overview of what Midjourney is, and how to use it.</p>
+        <h1><p class="article-title-head">MIDJOURNEY DEMO:</p></h1>
+        <h2><p class="article-title-desc">A high-level overview of what Midjourney is, and how to use it.</p></h2>
     </div>
     <div class="article-body">
+        <h3 class="title-in-text">This Midjourney Demo is a high level overview of what exactly midjourney is and how to use it effectively</h3>
+
         Midjourney is a tool that is used to create images using AI and machine learning. It is provided by an independent company that uses Discord to deliver its product to the people. While Midjourney has a free version, we will be using the paid-for version as it’s generally quite a bit easier to use.<br><br>
 
-        Midjourney is constantly innovating, so depending on the time this article was released, this data may be outdated. However, it will likely still be relevant to some extent.<br><br>
+        Midjourney is constantly innovating, so depending on the time this article was released, this data may be outdated. However, it will likely still be relevant to some extent.
 
-        How to use:<br><br>
+        <h4 class="title-in-text">How to use:</h4>
         Whenever you pay for midjourney, you will receive a message in your discord private messages from a ‘Midjourney Bot’. This private message channel will be where we interact. If you are using the free version of Midjourney, you will have to use the Midjourney discord channel but the usage is similar. <br><br>
 
         To start off simple, let's create a simple image of a tree. To do this will be using the command /imagine prompt: It can be a bit tricky, but it'll open a prompt that you're going to want to type your description and information into. If you type your input outside of this prompt the command will be formatted strangely and it won’t work as intended. It should look something like this:<br><br>
@@ -62,7 +67,7 @@
 
         <img src="midjimg/midj_options2.png"></img>        
 
-        Let’s break them down:<br><br>
+        <h5 class="title-in-text">Let’s break them down:</h5>
         <p class="bullet">- Vary (Strong/Subtle): Similar to the V option we saw earlier, this option makes variations to the upscaled image, and produces a new tileset to choose from based on the upscaled image.</p>
         <p class="bullet">- Vary (Region): This is a very useful and powerful option that allows you to make variations to a certain section of the image. It has a box and lasso selector so you can get really specific with a section of an image you want to change.</p>
         <p class="bullet">- Zoom (2x, 1.5x, Custom): Allows you to zoom out of the current image. 2x and 1.5x are pretty self explanatory but custom zoom is bounded to the range of 1.0 and 2.0. So there is currently no way to zoom into the image, or zoom out more than 2x.</p>
@@ -76,23 +81,23 @@
 
         <img src="midjimg/img4.png"></img>
 
-        A tall tree with red leaves.<br><br><br><br>
+        <p class="image-text">A tall tree with red leaves.</p><br><br>
 
         <img src="midjimg/img5.png"></img>
 
-        A tall tree with red leaves overlooking a mountain range with snowy peaks<br><br><br><br>
+        <p class="image-text">A tall tree with red leaves overlooking a mountain range with snowy peaks</p><br><br>
 
         <img src="midjimg/img6.png"></img>
 
-        A tall tree with red leaves overlooking a mountain range with snowy peaks. A man sits underneath the tree.<br><br><br><br>
+        <p class="image-text">A tall tree with red leaves overlooking a mountain range with snowy peaks. A man sits underneath the tree.</p><br><br>
 
         <img src="midjimg/img7.png"></img>
 
-        A tall tree with red leaves overlooking a mountain range with snowy peaks. A war-torn man sits underneath the tree wielding an ax on his back.<br><br><br><br>
+        <p class="image-text">A tall tree with red leaves overlooking a mountain range with snowy peaks. A war-torn man sits underneath the tree wielding an ax on his back.</p><br><br>
 
         As you can see, you can be pretty verbose with your descriptions. However, you can definitely get too verbose. As you add granularity to your prompt, it leaves more room for interpretation from the bot. There are some things you can do to ‘fix’ this, however, we will ignore this for now as it isn’t incredibly important. A good rule of thumb to keep in mind is generally the more concise your prompt is, the better.<br><br>
 
-        There are some options and keywords that are really important to know though, so let’s explore those.<br><br>
+        <h6 class="title-in-text">There are some options and keywords that are really important to know though, so let’s explore those.</h6>
 
         <p class="bullet">–v or –version : This is the version of midjourney to use. While not required, putting this setting at the end of your prompt is highly recommended, as it’ll often lead to a better output. At the time of writing this article, the highest version is 5.2
         </p>
@@ -113,17 +118,17 @@
         Based on what we now know about keywords and options, lets generate some images.<br><br>
         
         <img src="midjimg/img8.png"></img>
-        Deep in the fairy woods, a land fills with soothing purples, greens, and blues, mystical, hyper realistic, 8k, hddr, --v 5.0 --w 500<br><br><br><br>
+        <p class="image-text">Deep in the fairy woods, a land fills with soothing purples, greens, and blues, mystical, hyper realistic, 8k, hddr, --v 5.0 --w 500</p><br><br>
 
 
         <img src="midjimg/img9.png"></img>
-        New York city if it was a dystopian future, smog, dirty, grime, neon, bright colors, urban decay, intricate anime style --v 5.0 --chaos 20<br><br><br><br>
+        <p class="image-text">New York city if it was a dystopian future, smog, dirty, grime, neon, bright colors, urban decay, intricate anime style --v 5.0 --chaos 20</p><br><br>
 
         <img src="midjimg/img10.png"></img>
-        An old mage named Ted that has a large belly and uses 'beer magic'. Beer flows around him as he uses it as his source of magic. White background with Bill Watterson character design. --v 5.0 --chaos 20 --q 0.5<br><br><br><br>
+        <p class="image-text">An old mage named Ted that has a large belly and uses 'beer magic'. Beer flows around him as he uses it as his source of magic. White background with Bill Watterson character design. --v 5.0 --chaos 20 --q 0.5</p><br><br>
 
         <img src="midjimg/img11.png"></img>
-        Abstract oil painted art based on the Dual of Mustafar, deep reds, feelings and themes of anger, sorrow, hatred, and betrayal. Hand painted --v 5.0 --chaos 25 --q 0.5 --ar 2:1<br><br><br><br>
+        <p class="image-text">Abstract oil painted art based on the Dual of Mustafar, deep reds, feelings and themes of anger, sorrow, hatred, and betrayal. Hand painted --v 5.0 --chaos 25 --q 0.5 --ar 2:1</p><br><br>
 
         Here you can see how powerful this tool is at creating a variety of images that can be used for any setting.<br><br>
 
@@ -135,6 +140,9 @@
 
 
 
+    </div>
+    <div class="footer">
+        
     </div>
 
     <script src="background.js"></script>

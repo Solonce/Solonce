@@ -7,27 +7,30 @@
 <body>
     <canvas id="myCanvas" style="position: absolute;"></canvas>
     <!-- The full-width title -->
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html" class="link">HOME</a> 
-                <a href="about.html" class="link">ABOUT ME</a>
-                <a href="contact.html" class="link">CONTACT</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="header">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="link">HOME</a> 
+                    <a href="about.html" class="link">ABOUT ME</a>
+                    <a href="contact.html" class="link">CONTACT</a>
+                </li>
+                <div class="header-segment"></div>
+            </ul>
+        </nav>
+    </div>
 
-    <h1 id="title" class="centered-element title-element">
+    <div id="title" class="centered-element title-element">
         <p>SOLONCE</p>
         <p id="currentDateTime" class="date"></p>
-    </h1>
+    </div>
     <div class="article-container">
-        <p class="article-title-head">SCRIPT PERMANANCE <br>WITH SYSTEMD:</p>
-        <p class="article-title-desc">Setting up a Systemd service using Daemon script. The goal being to set a python script to run 24/7</p>
+        <h1><p class="article-title-head">SCRIPT PERMANANCE WITH SYSTEMD:</p></h1>
+        <h2><p class="article-title-desc">Setting up a Systemd service using Daemon script. The goal being to set a python script to run 24/7</p></h2>
     </div>
     <div class="article-body">
         <p>
-            How to run a scheduled script on a linux based machine using daemon and systemd.
+            <h3 class="title-in-text">How to set up a scheduled permanent script on a linux based machine using daemon, systemd, and python.</h3>
         </p>
 
         <p>
@@ -73,7 +76,7 @@
         </div>
 
         <p>
-            Brief Overview:<br><br>
+            <h4 class="title-in-text">Brief Overview:</h4>
             -ExecStart takes the location of your python installation and the script<br>
             -User defines the user that the service will act within<br>
             -WorkingDirectory defines the directory that the service and script will work within<br>
@@ -130,6 +133,9 @@
                 > journalctl -u your_service_name.service
             </p>
         </div>
+    </div>
+    <div class="footer">
+        
     </div>
     <script src="background.js"></script>
     <script src="getTime.js"></script>
