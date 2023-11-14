@@ -314,7 +314,7 @@ canvas {
 
 h1 {
     font-size: 3em;
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
     background-color: #faf8d7; /* Same as body background */
     letter-spacing: calc((100% - 50px) / 5); /* Divide the available width by the number of letters */
@@ -323,7 +323,7 @@ h1 {
 h2 {
     display: flex;
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 500;
     background-color: #faf8d7; /* Same as body background */
     height: auto; 
     margin: 0;
