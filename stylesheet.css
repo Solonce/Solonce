@@ -208,13 +208,14 @@ body {
 
 .link {
     margin: 0;
-    padding: 10px;
     text-decoration: none;
     list-style-type: none;
     position: relative;
     text-align: right;
     color: black;
     font-size: 3vw;
+    width: auto;
+    padding-left: 1vw;
 }
 
 .link a:hover {
@@ -264,7 +265,6 @@ body {
 
 .header a {
     font-size: 1.5vw;
-    padding: 0.1vw;
     
 }
 
@@ -301,6 +301,11 @@ header, nav, ul {
     color: black;
     font-family: newspaper;
     font-size: 40px;
+}
+
+li {
+    display: flex;
+    justify-content: right;
 }
 
 canvas {
