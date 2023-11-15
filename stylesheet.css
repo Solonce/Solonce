@@ -70,9 +70,11 @@ body {
 }
 
 .article-title-head {
+    display: inline-flex;
     height: auto;
     font-family: newspaper;
     max-width: 30vw;
+    width: auto;
     margin-bottom: 1vw;
     margin-top: 0;
     align-self: flex-end;
