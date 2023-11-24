@@ -15,6 +15,8 @@ body {
     overflow-x: hidden;
 }
 
+
+
 /* Style the container */
 .centered-element {
     padding-bottom: 1vw;
@@ -48,15 +50,12 @@ body {
    margin-right: auto;
 }
 
-.article {
+.date {
+    font-size: 1.35vw;
+    width: 70vw;
+    text-align: right;
     position: relative;
-    padding-bottom: 30px; /* Adjust this value according to your design needs */
-    margin-left: auto;
-    margin-right: auto;
-    width: 60vw;
-    display: flex; /* Use flexbox for layout */
-    align-items: flex-end; /* Center items vertically */
-    background-color: transparent;
+    top: 8vw !important;
 }
 
 .article-container {
@@ -75,11 +74,13 @@ body {
     font-family: newspaper;
     max-width: 30vw;
     width: auto;
-    margin-bottom: 1vw;
+    margin-bottom: 0;
     margin-top: 0;
     align-self: flex-end;
     text-align: left;
-    font-size: 4vw  !important
+    font-size: 4vw;
+    line-height: 4vw;
+    background: transparent;
 }
 
 .article-title-desc {
@@ -90,44 +91,66 @@ body {
     margin-bottom: 1vw;
     position: relative;
     line-height: 2vw;
-    font-size: 1.5vw !important;
-    
+    font-size: 1.5vw; 
 }
 
-.article-body {
-    display: block;
-    justify-content: center;
-    width: 55vw;
+.segment {
+    content: "";
+    height: 2px;
+    background-color: black;
     margin-left: auto;
     margin-right: auto;
+    width: 30vw;
+    margin-top: 1vw;
+    margin-bottom: 3vw;
+}
+
+.article {
+    position: relative;
+    padding-bottom: 30px; /* Adjust this value according to your design needs */
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-end; /* Center items vertically */
+    background-color: transparent;
+}
+
+.article a{
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-end /* Center items vertically */
     font-size: 1.35vw;
-    bottom: 100px;
-    padding: 2.5vw;
-    background-color: rgba(0, 0, 0, .125); 
-
+    max-width: 30vw;
 }
 
-.article-body img{
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.link {
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    position: relative;
+    text-align: right;
+    color: black;
+    font-size: 1.5vw;
+    padding-left: 1vw;
 }
 
-.image-text {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    max-width: 50%;
-    font-size: 75%;
+.article-content {
+    display: inline-block;
+    background-color: transparent;
+    letter-spacing: 0.05vw;
+}
+
+.article img {
+    width: 15vw; /* Set width */
+    height: 15vw; /* Set height */
+    object-fit: cover; /* Ensures image retains its aspect ratio, cropping if needed */
 }
 
 .article-right {
     text-align: right;
     justify-content: right;
-    padding-right: 50px;
+    padding-right: 10vw;
 }
-
 
 .article-right::after{
     content: "";
@@ -146,19 +169,17 @@ body {
 
 }
 
+.article-left{
+	text-align: left;
+    justify-content: left;
+    padding-left: 10vw;
+}
 
 .article-left p{
     max-width: 30vw;
     text-align: left;
     margin-left: 0;
     margin-right: auto;
-
-}
-
-.article-left{
-	text-align: left;
-    justify-content: left;
-    padding-left: 50px;
 }
 
 .article-left::after{
@@ -170,54 +191,157 @@ body {
     background-color: black;
 }
 
-.article img {
-    disply: inline-block;
-    width: 15vw; /* Set width */
-    height: 15vw; /* Set height */
-    object-fit: cover; /* Ensures image retains its aspect ratio, cropping if needed */
-}
-
-.article a{
-    display: flex; /* Use flexbox for layout */
-    align-items: flex-end /* Center items vertically */
-    gap: 20px; /* Space between the image and the text content */
+.article-body {
+    display: block;
+    justify-content: center;
+    width: 55vw;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.35vw;
-    max-width: 30vw;
-
+    bottom: 100px;
+    padding: 2.5vw;
+    background-color: rgba(0, 0, 0, .125); 
 }
 
-.article-content {
-    display: inline-block;
-    background-color: transparent;
-    letter-spacing: 0.05vw;
-    gap: 10px; /* Space between the title and the description */
+.article-body img{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.title-in-text {
+    font-size: 2vw;
+}
+
+.header {
+    position: sticky !important;
+    top: 0px;
+    z-index: 1000;
+    padding: 0;
+}
+
+.header a {
+    font-size: 1.5vw;
+}
+
+.header-segment {
+    content: "";
+    height: 2px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: 0;
+    width: 22.5vw;
+    margin-top: 0.5vw;
+    margin-bottom: 3vw;    
+}
+
+@media only screen and (max-width: 600px) {
+	.title-element {
+		margin-left: 0px;
+		margin-right: 0px;
+		font-size: 20vw;
+	}
+
+	.title-element p {
+		height: 15vw;
+	}
+
+	.title-element::after {
+		width: 90vw;
+	}
+
+	.date {
+		font-size: 3vw;
+		width: 90vw;
+	}
+
+	.article-container {
+		max-width: 90vw;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 2vw;
+	}
+
+	.article-title-head {
+		max-width: 40vw;
+		font-size: 6vw;
+		line-height: 6vw;
+	}
+
+	.article-title-desc {
+		max-width: 60vw;
+		font-size: 3.5vw;
+		line-height: 4vw;
+		margin-bottom: 0vw;
+
+	}
+
+	.segment {
+		width: 70vw;
+	}
+
+	.article {
+		width: 90vw;
+	}
+
+	.article a {
+		font-size: 3vw;
+	}
+
+	.article img {
+		height: 30vw;
+		width: 30vw;
+	}
+
+	.article-left p {
+		max-width: 50vw;
+	}
+
+	.article-left::after {
+		width: 50vw;
+	}
+
+	.article-right p {
+		max-width: 50vw;
+	}
+
+	.article-right::after {
+		width: 50vw;
+	}
+
+	.article-body {
+		width: 80vw;
+		font-size: 3.25vw;
+	}
+
+	.title-in-text {
+		font-size: 5.5vw;
+	}
+
+	.header a {
+		font-size: 3vw;
+	}
+
+	.header-segment {
+		width: 40vw;
+	}
+}
+
+
+.image-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 50%;
+    font-size: 75%;
+}
+
 
 .article-title {
     font-size: 1.5em; /* Adjust size as needed */
     font-weight: bold;
     background-color: transparent;
-}
-
-.date {
-    font-size: 1.35vw;
-    width: 70vw;
-    text-align: right;
-    position: relative;
-    top: 8vw !important;
-
-}
-
-.link {
-    margin: 0;
-    text-decoration: none;
-    list-style-type: none;
-    position: relative;
-    text-align: right;
-    color: black;
-    font-size: 3vw;
-    width: auto;
-    padding-left: 1vw;
 }
 
 .link a:hover {
@@ -241,10 +365,6 @@ body {
 
 }
 
-.title-in-text {
-    font-size: 2vw;
-}
-
 .bullet {
 	margin-left: 2vw;
 }
@@ -258,38 +378,9 @@ body {
     height: 5vw;
 }
 
-.header {
-    position: sticky !important;
-    top: 0px;
-    z-index: 1000;
-    padding: 0;
-}
-
-.header a {
-    font-size: 1.5vw;
-    
-}
-
-.segment {
-    content: "";
-    height: 2px;
-    background-color: black;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30vw;
-    margin-top: 1vw;
-    margin-bottom: 3vw;
-}
-
-.header-segment {
-    content: "";
-    height: 2px;
-    background-color: black;
-    margin-left: auto;
-    margin-right: 0;
-    width: 22.5vw;
-    margin-top: 0.5vw;
-    margin-bottom: 3vw;    
+.section-header {
+	font-weight: 600; 
+	font-size: 200%;
 }
 
 /* Style the full-width title */

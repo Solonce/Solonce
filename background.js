@@ -1,13 +1,14 @@
 const points = []
-let numPoints = 40;
-let incrementRange = 100;
-let aliveTime = 300;
-let switchDirection = 5;
 let width = window.innerWidth;
 let height = document.documentElement.scrollHeight;
+console.log(width/22)
+let numPoints = width/30;
+let incrementRange = 100;
+let aliveTime = 6000;
+let switchDirection = 10;
 const canvas = document.getElementById("myCanvas")
 const ctx = canvas.getContext("2d")
-let title = document.getElementById("title").getBoundingClientRect()
+let title = document.getElementById("title").getBoundingClientRect().bottom + 100
 ctx.canvas.width = width
 ctx.canvas.height = height
 
@@ -53,11 +54,13 @@ async function build() {
 				}
 				ctx.lineWidth = ((i+1)/numPoints) * 3
 				ctx.lineTo(points[i][0], points[i][1])
-				let alpha = ((i+1)/numPoints) * .25
-				if(points[i][1] >= title.bottom/2) {
-					alpha = alpha * (1 - (points[i][1]/title.bottom))
+				let alpha = ((i+1)/numPoints) * 0.35
+				if(points[i][1] >= title/2) {
+					diff = (1 - (points[i][1]/title)) * 2
+					console.log(diff)
+					alpha = alpha * diff
 				}
-				if(points[i][1] > title.bottom*1.5){
+				if(points[i][1] > title*1.5){
 					return
 				}
 				ctx.strokeStyle = "rgba(0, 0, 0, " + alpha + ")";
