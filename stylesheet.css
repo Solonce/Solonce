@@ -62,7 +62,6 @@ body {
     display: flex;
     max-width: 60vw;
     height: auto;
-    line-height: 4vw;
     align-items: flex-end;
     margin-left: 19.5vw;
     margin-right: auto;
@@ -266,7 +265,7 @@ body {
 
 	.article-title-head {
 		max-width: 40vw;
-		font-size: 6vw;
+		font-size: 5.5vw;
 		line-height: 6vw;
 	}
 
@@ -407,18 +406,14 @@ canvas {
 }
 
 h1 {
-    font-size: 3em;
     font-weight: 600;
     text-align: center;
-    background-color: #faf8d7; /* Same as body background */
     letter-spacing: calc((100% - 50px) / 5); /* Divide the available width by the number of letters */
 }
 
 h2 {
     display: flex;
-    font-size: 1.5em;
     font-weight: 500;
-    background-color: #faf8d7; /* Same as body background */
     height: auto; 
     margin: 0;
 }
