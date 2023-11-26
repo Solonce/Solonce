@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How to set up custom domain on github pages | Solonce</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+    <canvas id="myCanvas" style="position: absolute;"></canvas>
+    <!-- The full-width title -->
+    <div class="header">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="link">HOME</a> 
+                    <a href="about.html" class="link">ABOUT ME</a>
+                    <a href="contact.html" class="link">CONTACT</a>
+                </li>
+                <div class="header-segment"></div>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="title" class="centered-element title-element">
+        <p>SOLONCE</p>
+        <p id="currentDateTime" class="date"></p>
+    </div>
+    <div class="article-container">
+        <h1><p class="article-title-head">Custom Doamin on Github Pages</p></h1>
+        <h2><p class="article-title-desc">Tutorial on how to set up your github pages site with a custom domain.</p></h2>
+    </div>
+    <div class="article-body">
+        <h3 class="title-in-text">How to set a custom domain for a website hosted on Github.</h3>
+    	Its really quite a simple process, only requiring a few fields to be set up for it to properly function. We will be using <a href="https://name.com">name.com</a> to facilitate the domain hosting. However, so long you have access to a DNS Manager, you should be able to do this with any domain hosting service.<br><br>
+
+		<p class="title-in-text" style="font-size: 200%; font-weight: 600">Getting a DNS TXT record from Github</p>
+
+		One of the first things will need to do is verify the DNS with Github. This can be done by traversing the menus in this manner.<br><br>
+
+		<p class="code-snippet">Profile > Settings > Coding, Planning & Automation > Pages</p><br><br>
+
+		Then you’ll click <b>‘Add a Domain’</b><br><br>
+
+		Here you should be prompted with a field for you to enter your domain name. We will use ‘test.com’ as a test ust to show you the results.<br><br>
+
+		<img src="domainimg/txt_record.png" style="width: 85%"></img><br>
+
+		You should be given some info like this. Keep this page open, and we’ll migrate to our DNS Manager.<br><br>
+
+
+		<p class="title-in-text" style="font-size: 200%; font-weight: 600">Setting DNS 'TXT' records</p>
+		You’re going to want to open a new record set to type <b>‘TXT’</b><br><br>
+
+		<img src="domainimg/enter_txt_record.png" style="width:95%"></img><br>
+
+		You’re going to put the first bit of text from github in the <b>‘HOST’</b> field, and the second bit of text in the <b>‘ANSWER’</b> field. You can leave TTL as is. Then youre going to want to add the record to your DNS.<br><br>
+
+		Then you can go back to Github and verify the DNS. This may take a few minutes, but this is all we need to do on this page for now, so we can go back to our DNS manager to set up a few <b>‘A’</b> records.<br><br>
+
+		<p class="title-in-text" style="font-size: 200%; font-weight: 600">Setting DNS 'A' records</p>
+
+		Github Pages has a few name servers that we need to setup with the DNS manager. These addresses are:<br>
+
+		<div class="bullet">
+			<p>- 185.199.108.153<br>
+			- 185.199.109.153<br>
+			- 185.199.110.153<br>
+			- 185.199.111.153</p>
+		</div>
+
+
+		We will need to set an <b>‘A’</b> record for each of these addresses. This is the same as before, but instead of a <b>‘TXT’</b> record, its an <b>‘A’</b> record. Just input each address into the <b>‘ANSWER’</b> field. You can leave the <b>‘HOST’</b> field empty, as it will auto populate with the domain name.<br><br>
+
+
+		<img src="domainimg/enter_a_record.png" style="width: 80%"></img><br>
+
+
+		<p class="title-in-text" style="font-size: 200%; font-weight: 600">Setting DNS 'CNAME' records</p>
+		Next, we will need to create a CNAME record for our DNS Manager. <br><br>
+
+		This is as simple as making any other record.<br><br>
+
+		<img src="domainimg/enter_cname_record.png" style="width: 80%"></img><br>
+
+		All we need to do here, is under the <b>‘TYPE’</b> field we input <b>‘CNAME’</b>, and under the <b>‘HOST’</b> field we input <b>‘www’</b>, and in the <b>‘ANSWER’</b> field, we input the github pages link to the webpage.<br><br>
+
+		<p class="title-in-text" style="font-size: 200%; font-weight: 600">Setting Domain in Github</p>
+
+		Then, last step should just be setting up our CNAME file and setting our custom domain on our github page repo.<br><br>
+
+		To do this, we need to navigate to our page settings. This can be done with this menu traversal<br><br>
+
+		<p class="code-snippet">Repo > Settings > Code and Automation > Pages</p><br><br>
+
+		Then, if we scroll down a bit, we will see an area for ‘Custom Domain’. We simply need to put in our domain name here. Ensure that there are no issues with our DNS records, and we are good to roll!<br><br>
+
+		<img src="domainimg/custom_domain_check.png" style="width:85%"></img><br>
+
+		This make take a few minutes.<br><br>
+
+		<img src="domainimg/custom_domain_success.png" style="width:85%"></img><br>
+
+		When we successfully set our domain name, the CNAME file will auto-generate in the repo.
+
+
+
+
+    </div>
+
+    <div class="footer">
+        
+    </div>
+
+    <script src="background.js"></script>
+    <script src="getTime.js"></script>
+</body>
+</html>
