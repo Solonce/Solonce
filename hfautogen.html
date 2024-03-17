@@ -4,6 +4,12 @@
     <title>Contact Me | Solonce</title>
     <meta name="description" content="A simple contact me page where you can find a variety of different ways to reach out and contact me. Feel free to reach out with questions, ideas, or offers.">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="styles/dracula.css">
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+/>
+
 </head>
 <body>
     <canvas id="myCanvas" style="position: absolute;"></canvas>
@@ -15,7 +21,6 @@
                     <a href="about.html" class="header-item link">ABOUT ME</a>
                     <a href="contact.html" class="link">CONTACT</a>
                 </li>
-                <div class="header-divider"></div>
             </ul>
         </nav>
     </div>
@@ -26,14 +31,116 @@
     </div>
     <div class="main-divider"></div>
     <div class="article-container">
-        <h1><p class="article-title-head">CONTACT ME:</p></h1>
-        <h2><p class="article-title-desc">Ways you can reach out and contact me.</p></h2>
+        <h1><p class="article-title-head">HFAutogen Release:</p></h1>
+        <h2><p class="article-title-desc">Quick zero-cost protoyping of multi-agent architecutres.</p></h2>
     </div>
     <div class="article-body">
-        <p>Github - <a href="https://github.com/Solonce">@Solonce</a></p><br>
-        <p>LinkedIN - <a href="https://www.linkedin.com/in/solomon-ince/">Solomon Ince</a></p><br>
-        <p>Email - solomon@solonce.com</p><br>
+        <div>
+            <img style="background-color: #282A36; border-radius: 5px; margin: 0 auto 5vh auto;" src="domainimg/HFAutogen_Logo.png">
+        </div>
+        <div class="title-in-text">
+            What is HFAutogen?
+        </div>
+        <div>
+            HFAutogen is a python package that allows the user to utilize multi-agent communication for little to no processing power and free of charge.<br><br>
+            It acheives this by leveraging HuggingFace's Serverless Inference API and having Custom Model Clients provided by Autogen to accept non-OpenAI formatted requests.
+            This allows a user to acheive omplex conversations between different agents with different intent or use-cases.
+        </div>
 
+        <div style="height: 5vh;"></div>
+        
+        <div class="title-in-text">
+            Why HFAutogen?
+        </div>
+        <div>
+            <u>Simple & Fast Prototyping:</u><br>
+            Quickly prototype free multi-agent communication structures with low-memory machines.<br><br>
+            <u>Multiple Agents:</u><br>
+            Synthesize Programmers, Project Leads, Analysists, Experts, Test-Users, etc. At the time on release, HFAutogen only supports two agents. The next release will include GroupChat functionality. See 'Restrictions.'<br><br>
+            <u>Autonomous Code Generation & Execution:</u><br>
+            Generate, execute, debug, and save scripts to be used by an agent or to a user.<br><br>
+        </div>
+
+        <div style="height: 5vh;"></div>
+
+        <div class="title-in-text">
+            How to Install
+        </div>
+        <div>Install HFAutogen using pip as seen below.</div>
+        <pre><code style="border-radius: 10px; font-size: 65%; height: 5vh;">pip install hfautogen</code></pre>
+
+        <div style="height: 5vh;"></div>
+
+        <div class="title-in-text">
+            How to Use
+        </div>
+        <div>You can find the documentation <a href="https://github.com/Solonce/HFAutogen">on the Github page here.</a><br></div>
+        <pre><code style="border-radius: 10px; font-size: 65%;">from hfautogen import ModelAgent, UserAgent, InitChat
+
+_input = input("Write me a simple poems about flowers\n")
+hf_key = "hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+user = UserAgent("user_proxy")
+assistant = ModelAgent("assistant",
+                        hf_key,
+                        system_message="You are a friendly AI assistant.")
+
+InitChat(user, assistant, _input)</code></pre>
+        <div>
+            There are three main functions you want to use.<br><br>
+            <u>UserClient</u><br>
+            An agent that acts as the user, that uses a model provided by HuggingFace's free inerference api to generate requests to the ModelClient()<br><br>
+            <u>ModelClient</u><br>
+            An agent that uses a model provided by HuggingFace's free inference api to respond to the UserCleint() requests/comments.<br><br>
+            <u>InitChat</u><br>
+            A function that allows a UserClient() and a ModelClient to interact with one another.
+        </div>
+
+        <div style="height: 5vh;"></div>
+
+        <div class="title-in-text">
+            Capabilities
+        </div>
+        <div>
+            <u>Two-Agent Communication:</u><br>
+            At the time of this projects release, it is only able to interact between a user agent, and a model agent. See 'Restrictions' for the current limitations this provides.<br><br>
+
+            <u>Quick Prototyping:</u><br>
+            HFAutogen allows quick protyping of complex agent architectures. The free access to an api allows little to no computing power required with no cost associated.
+            This allows for beginners and expert alike to avoid the usual overhead assiciated with AI development.<br><br>
+            
+            <u>Automatic Code Execution:</u><br>
+            The user agent is able to execute and save code. This means that you are able to autonomously create scripts that can acheive a given task. Given the correct input, one could create scripts to replicate human actions in a solo or team based setting. Allowing quick protoyping of different work environment.<br><br>
+        </div>
+
+        <div style="height: 5vh;"></div>
+
+        <div class="title-in-text">
+            Restrictions
+        </div>
+        <div>
+            GroupChat features normally found in Autogen are not currently implimented, restricting the complexity of conversations that one can produce.<br><br>
+            Not all models found on HuggingFace will be available for use for free, only those that have serverless inference already set up.<br><br>
+        </div>
+
+        <div style="height: 5vh;"></div>
+
+        <div class="title-in-text">
+            In Progress
+        </div>
+        <div>
+            The biggest feature that is a work in progress is implimenting GroupChat funcitonality. This will allow a user to create entire teams of agents that work in conjunction toward a common goal.<br><br>
+        </div>
+    
+    <div class="title-in-text">
+            Displaimer & Explination
+        </div>
+        <div>
+            <u>Disclaimer:</u><br>
+            I created and had no part of the creation of Autogen or HuggingFace's Inference API. I simply made the two compatible to work together, which was not previously a feature.<br><br>
+            <u>Explination:</u><br>
+            The code that enables HFAutogen to work is relatively simple. Autogen has two methods, CustomModelClient and CustomModelClientWithArguments. These methods allow me to create a custom model client that takes in a HuggingFace Inference API link, rather than strictly an OpenAI compatible link. Then, because the data received is not in an OpenAI compatible format, it handles the processing and contextulizing of that data for the agents to properly use.<br><br>
+        </div>
     </div>
     <div class="footer">
         <a href="https://github.com/Solonce">
@@ -52,7 +159,12 @@
             </button>
         </a>
     </div>
+    <script src="highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <script>hljs.addPlugin(new CopyButtonPlugin());</script>
 
+    <script>hljs.highlightAll();</script>
+    
     <script src="getTime.js"></script>
 </body>
 </html>

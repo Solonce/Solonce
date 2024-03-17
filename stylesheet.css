@@ -1,161 +1,158 @@
 @font-face {
     font-family: newspaper;
-    src: url("fonts/PlayfairDisplay-VariableFont_wght.ttf");
+    src: url("fonts/Roboto-Regular.ttf");
 }
 
 /* Reset default margins and padding */
-body, h1 {
+body {
     margin: 0;
     padding: 0;
 }
 
 /* Set the background color */
 body {
-    background-color: #faf8d7;
+    /*background-color: #faf8d7;*/
     overflow-x: hidden;
 }
 
 
+html {
+    height: 100vh;
+    --sz: 25px; /*** size ***/
+  --c0: #faf8d7; /* Base color, a soft beige */
+  --c1: #f0e4c3; /* A lighter, soft tan */
+  --c2: #e6d9af; /* A warm, muted gold */
+  --c3: #dcd0a1; /* A subdued, earthy yellow */
+  --ts: 50%/ calc(var(--sz) * 12.8) calc(var(--sz) * 22);
+  background:
+        /*bottom*/
+    conic-gradient(from 120deg at 50% 86.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from 120deg at 50% 86.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+        /*bottom dark*/
+        conic-gradient(from 120deg at 50% 74%, var(--c0) 0 120deg, #fff0 0 360deg) var(--ts),
+        /*right*/
+        conic-gradient(from 60deg at 60% 50%, var(--c1) 0 60deg, var(--c2) 0 120deg, #fff0 0 360deg) var(--ts),
+        /*left*/
+        conic-gradient(from 180deg at 40% 50%, var(--c3) 0 60deg, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+        /*top dark*/
+    conic-gradient(from 0deg at 90% 35%, var(--c0) 0 90deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from -90deg at 10% 35%, var(--c0) 0 90deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from 0deg at 90% 35%, var(--c0) 0 90deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from -90deg at 10% 35%, var(--c0) 0 90deg, #fff0 0 360deg) var(--ts),
+        /*top*/
+    conic-gradient(from -60deg at 50% 13.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+    conic-gradient(from -60deg at 50% 13.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+        conic-gradient(from -60deg at 50% 41%, var(--c2) 0 60deg, var(--c3) 0 120deg, #fff0 0 360deg) var(--ts),
+        var(--c0) ;
+
 
 /* Style the container */
 .centered-element {
-    padding-bottom: 1vw;
     text-align: center;
 }
 
 .title-element {
-    display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: 15vw;
+    font-size: 15vh;
     background-color: transparent;
 }
 
 .title-element p {
     font-family: newspaper;
-    height: 10vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;    
+    margin: auto;  
 }
 
-.title-element::after {
-   content: "";
-   display: block;
-   height: 4px;
-   background-color: black;
-   width: 70vw;
-   margin-left: auto;
-   margin-right: auto;
+.main-divider {
+    margin: auto;
+    height: 0.5vh;
+    width: 65vw;
+    background-color: black;
 }
 
 .date {
     font-size: 1.35vw;
-    width: 70vw;
+    width: 65vw;
     text-align: right;
-    position: relative;
-    top: 8vw !important;
 }
 
 .article-container {
     display: flex;
+    flex-direction: column;
     max-width: 60vw;
-    height: auto;
-    align-items: flex-end;
-    margin-left: 19.5vw;
-    margin-right: auto;
+    margin: 5vh auto 5vh auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .article-title-head {
-    display: inline-flex;
-    height: auto;
     font-family: newspaper;
     max-width: 30vw;
-    width: auto;
-    margin-bottom: 0;
-    margin-top: 0;
-    align-self: flex-end;
-    text-align: left;
-    font-size: 4vw;
-    line-height: 4vw;
+    line-height: 4vh;
+    font-size: 4vh;
     background: transparent;
+    margin: 0;
 }
 
 .article-title-desc {
     font-family: newspaper;
     max-width: 40vw;
-    margin-left: 0.25vw;
-    margin-top: 0;
-    margin-bottom: 0;
-    position: relative;
-    line-height: 2vw;
-    font-size: 1.5vw;
+    line-height: 4vh;
+    font-size: 3vh;
     background: transparent; 
-}
-
-.segment {
-    content: "";
-    height: 2px;
-    background-color: black;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30vw;
-    margin-top: 1vw;
-    margin-bottom: 3vw;
+    margin: 0 0 0 1vw;
 }
 
 .article {
-    position: relative;
-    padding-bottom: 30px; /* Adjust this value according to your design needs */
-    margin-left: auto;
-    margin-right: auto;
-    width: 60vw;
-    display: flex; /* Use flexbox for layout */
-    align-items: flex-end; /* Center items vertically */
+    display: flex;
+    margin: 3vh auto 3vh auto;
     background-color: transparent;
 }
 
 .article a{
-    display: flex; /* Use flexbox for layout */
-    align-items: flex-end /* Center items vertically */
-    font-size: 1.35vw;
-    max-width: 30vw;
+    display: flex;
+}
+
+.header-item {
+    padding: 0 1vw 0 1vw;
 }
 
 .link {
-    margin: 0;
     text-decoration: none;
     list-style-type: none;
-    position: relative;
-    text-align: right;
     color: black;
-    font-size: 1.5vw;
-    padding-left: 1vw;
 }
 
 .article-content {
-    display: inline-block;
-    background-color: transparent;
     letter-spacing: 0.05vw;
+    font-size: 3vh;
+    width:50%;
 }
 
+.article-title {
+    font-size: 4vh;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
 .article img {
-    width: 15vw; /* Set width */
-    height: 15vw; /* Set height */
+    width: 30%; /* Set width */
+    height: auto; /* Set height */
     object-fit: cover; /* Ensures image retains its aspect ratio, cropping if needed */
 }
 
 .article-right {
     text-align: right;
     justify-content: right;
-    padding-right: 10vw;
+    padding-right: 20%;
 }
 
 .article-right::after{
     content: "";
     display: flex;
-    width: 35vw;
+    width: 100%;
     bottom: 5px;
     height: 4px;
     background-color: black;
@@ -172,7 +169,7 @@ body {
 .article-left{
 	text-align: left;
     justify-content: left;
-    padding-left: 10vw;
+    padding-left: 20%;
 }
 
 .article-left p{
@@ -185,56 +182,54 @@ body {
 .article-left::after{
     content: "";
     display: flex;
-    width: 35vw;
+    width: 100%;
     bottom: 5px;
     height: 4px;
     background-color: black;
 }
 
 .article-body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 55vw;
-    margin-left: auto;
-    margin-right: auto;
+    width: 45vw;
+    margin: 0 auto 5vh auto;
+    padding: 5vh;
     font-size: 1.35vw;
-    bottom: 100px;
-    padding: 2.5vw;
-    background-color: rgba(0, 0, 0, .125); 
+    background-color: #dcd0a1; 
+    border-style: solid;
+    border-radius: 3px;
+    border-color: black;
+    font-family: newspaper;
 }
 
 .article-body img{
-    width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 .title-in-text {
-    font-size: 2vw;
+    font-size: 4vh;
+    margin: 0 0 3vh 0;
+    font-weight: 600;
 }
 
 .header {
-    position: sticky !important;
     top: 0px;
+    height: 8vh;
     z-index: 1000;
     padding: 0;
+    background: #dcd0a1;
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+    border-color: black;
 }
 
 .header a {
-    font-size: 1.5vw;
+    font-size: 4vh;
 }
 
-.header-segment {
-    content: "";
-    height: 2px;
-    background-color: black;
-    margin-left: auto;
-    margin-right: 0;
-    width: 22.5vw;
-    margin-top: 0.5vw;
-    margin-bottom: 3vw;    
-}
 
 @media only screen and (max-width: 600px) {
 	.title-element {
@@ -338,12 +333,6 @@ body {
 }
 
 
-.article-title {
-    font-size: 1.5em; /* Adjust size as needed */
-    font-weight: bold;
-    background-color: transparent;
-}
-
 .link a:hover {
     color: #141414;
 }
@@ -371,11 +360,53 @@ body {
 
 .footer {
     display: flex;
-    width: 63vw;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 3px 0px 0px 0px;
+    border-color: black;
+    width: 65vw;
     margin-left: auto;
     margin-right: auto;
-    justify-content: right;
-    height: 5vw;
+    justify-content: center;
+    align-items: center;
+    height: 6vw;
+}
+
+.footer-button {
+  padding: 10px;
+  margin: 0 0.5vw 0 0.5vw;
+  border: 0;
+  border-radius: 10px;
+  height: 80%;
+  background-color: #dcd0a1;
+  color: black;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #dcd0a1;
+}
+
+.footer-button:hover {
+  background-color: #fff8d7;
+  color: white;
+  border-color: black;
+  box-shadow: 0 0 20px grey;
+  transform: scale(1.1);
+}
+
+.footer-button a:hover {
+  fill: white;
+}
+
+.footer-button:active {
+  background-color: #dcd0a1;
+  color: white;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
 }
 
 .section-header {
@@ -406,20 +437,17 @@ canvas {
 }
 
 h1 {
+    display: flex;
     font-weight: 600;
-    text-align: center;
-    letter-spacing: calc((100% - 50px) / 5); /* Divide the available width by the number of letters */
+    height: auto;
 }
 
 h2 {
     display: flex;
     font-weight: 500;
     height: auto; 
-    margin: 0;
 }
 /* Style the image */
 img {
-    width: 100%;
-    height: auto;
     margin-bottom: 20px;
 }
