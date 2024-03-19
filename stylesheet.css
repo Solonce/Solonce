@@ -6,7 +6,6 @@
 /* Reset default margins and padding */
 body {
     margin: 0;
-    padding: 0;
 }
 
 /* Set the background color */
@@ -108,10 +107,13 @@ html {
     display: flex;
     margin: 3vh auto 3vh auto;
     background-color: transparent;
+
 }
 
 .article a{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-item {
@@ -149,15 +151,6 @@ html {
     padding-right: 20%;
 }
 
-.article-right::after{
-    content: "";
-    display: flex;
-    width: 100%;
-    bottom: 5px;
-    height: 4px;
-    background-color: black;
-}
-
 .article-right p{
     max-width: 30vw;
     text-align: right;
@@ -179,19 +172,12 @@ html {
     margin-right: auto;
 }
 
-.article-left::after{
-    content: "";
-    display: flex;
-    width: 100%;
-    bottom: 5px;
-    height: 4px;
-    background-color: black;
-}
 
 .article-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 45vw;
     margin: 0 auto 5vh auto;
     padding: 5vh;
@@ -231,30 +217,32 @@ html {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
 	.title-element {
 		margin-left: 0px;
 		margin-right: 0px;
-		font-size: 20vw;
+		font-size: 10vw;
+        padding: 4vh 0 0 0;
+	}
+
+	.date {
+		font-size: 3vw;
+		width: 65vw;
+        height: 2vh !important;
 	}
 
 	.title-element p {
-		height: 15vw;
+		height: 6vh;
 	}
 
 	.title-element::after {
 		width: 90vw;
 	}
 
-	.date {
-		font-size: 3vw;
-		width: 90vw;
-	}
 
 	.article-container {
 		max-width: 90vw;
-		margin-left: auto;
-		margin-right: auto;
+        margin: 1vh;
 		padding-bottom: 2vw;
 	}
 
@@ -272,12 +260,12 @@ html {
 
 	}
 
+    .footer {
+        padding: 2vh 0 10vh 0;
+    }
+
 	.segment {
 		width: 70vw;
-	}
-
-	.article {
-		width: 90vw;
 	}
 
 	.article a {
@@ -285,41 +273,61 @@ html {
 	}
 
 	.article img {
+        margin: auto;
 		height: 30vw;
 		width: 30vw;
 	}
+
+    .article-title{
+        font-size: 5vw;
+    }
+
+    .article-content {
+        font-size: 3vw;
+    }
+
+    .article-left {
+        padding-left: 5%;
+    }
 
 	.article-left p {
 		max-width: 50vw;
 	}
 
-	.article-left::after {
-		width: 50vw;
-	}
+    .article-right {
+        padding-right: 5%;
+    }
 
 	.article-right p {
 		max-width: 50vw;
 	}
 
-	.article-right::after {
-		width: 50vw;
-	}
-
 	.article-body {
 		width: 80vw;
-		font-size: 3.25vw;
+		font-size: 2.25vw;
+        padding: 2vw;
 	}
+
+    .article-body img {
+        margin: 0;
+    }
 
 	.title-in-text {
 		font-size: 5.5vw;
 	}
 
+    .header {
+        width: 100%;
+        height: 4vh;
+    }
+
 	.header a {
-		font-size: 3vw;
+		font-size: 1.75vh;
+        margin: 0 1vh 0 1vh;
 	}
 
 	.header-segment {
-		width: 40vw;
+		width: 40vw;?
 	}
 }
 
