@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uploading to PyPi | Solonce</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <meta name="description" content="An article discussing how to upload a python package to PyPi. This would enable any user to install your package via the 'pip' command in a command termnial.">
+    <link rel="stylesheet" type="text/css" href="../static/stylesheet.css">
+</head>
+<body>
+    <canvas id="myCanvas" style="position: absolute;"></canvas>
+        <div class="header">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="header-item link">HOME</a> 
+                    <a href="about.html" class="header-item link">ABOUT ME</a>
+                    <a href="contact.html" class="link">CONTACT</a>
+                </li>
+                <div class="header-divider"></div>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="title" class="centered-element title-element">
+        <p>SOLONCE</p>
+        <p id="currentDateTime" class="date"></p>
+    </div>
+    <div class="main-divider"></div>
+    <div class="article-container">
+        <h1><p class="article-title-head">Upload package to PyPi:</p></h1>
+        <h2><p class="article-title-desc">Uploading a python package to PyPi, enabling a pip install</p></h2>
+    </div>
+    <div class="article-body">
+        <h3 class="title-in-text">How to upload a package to PyPi, allowing any user to install your package via 'pip'.</h3><br>
+
+        The process for pushing your own package to PyPi is surpsingly simple.<br><br>
+        Youre going to need to make a folder that contains all these files, in this <i>specific</i> filetree structure.<br><br>
+
+        <div class="code-snippet">
+            <p>
+                <br>
+                │Package Folder<br>
+                │<br>
+                ├── dist<br>
+                ├── src<br>
+                │   └── main<br>
+                │       ├── __init__.py<br>
+                │       └── main.py<br>
+                ├── README.md<br>
+                ├── LICENSE<br>
+                ├── pyproject.toml<br>
+                └── setup.cfg<br>
+                <br>
+            </p>
+        </div><br>
+        All of these files can be empty upon creation, as I’ll provide all the information thats vital. Let’s break down what each of these files should include. <br><br><br>
+
+        <p style="font-weight: 600; font-size: 200%"><u>Folder Architecture</u></p>
+
+        <div style="font-weight: 600">__init__.py</div>
+        <p class="bullet"> 
+            This is an init file, meaning when you add ‘import mypackage’ to your script, it’ll run this file. This is where you can pull certain methods, classes, etc from any python files in the /src folder. It allows you to ‘cherry-pick’ what functionality you want to add from the python files youre uploading to PyPi.<br><br>
+
+            In my experience, __init__.py should really only be used to load methods from main.py or equivlent python script. However, if you want additional functionality when first importing a package, here is where you would do it.<br><br>
+
+            Here is an example of what might be included in your __init__.py file.
+        </p>
+        <p class="code-snippet">from .main import some_method</p>
+        <p class="bullet">
+            It is important to note how we are importing main.py. We are calling specifically ‘.main’. This is an identifier that lets the package module know to look within the same folder as __init__.py and import that file.<br><br>
+
+            That’s really all that’s needed in the __init__.py file, you can import as many functions as you like or write any functionality. The only thing of importance is just to note that <b>when the package is imported, this file will be ran.</b>
+
+
+        </p><br>
+
+        <div style="font-weight: 600">main.py</div>
+        <p class="bullet"> 
+            This should be pretty self explanatory, this is the main python file that holds the functionality that __init__.py will import.
+        </p><br>
+
+        
+        <div style="font-weight: 600">README.md</div>
+        <p class="bullet"> 
+            This is a markdown file that is needed when you upload a file to PyPi, so anyone who is reading the documentation knows how to use your package.
+        </p><br>
+
+        <div style="font-weight: 600">LICENSE</div>
+        <p class="bullet"> 
+            This file does not <i>require</i> anything inside. However, it is advised to include some license to show what is and is not allowed to be done with your package.<br><br>
+
+            I recommend browsing <a href="https://opensource.org/licenses/">https://opensource.org/licenses/ </a> to find a list of open source licneses that you are free to use.
+        </p><br>
+
+        <div style="font-weight: 600">pyproject.toml</div>
+        <p class="bullet"> 
+            This is a pretty standard file that helps build the package and build the wheels for the package.<br><br>
+            
+            pyproject.toml has pretty consistent data across python packages, I’d recommend you use the code below. It’s just to make sure that the package can build correctly, and that the correct wheels for the package can be built.
+        </p>
+        <p class="code-snippet">
+            [build-system]<br>
+            requires = [<br>
+                "setuptools>=42",<br>
+                "wheel"<br>
+            ]<br>
+            build-backend = "setuptools.build_meta"<br>
+        </p><br>
+        
+        <div style="font-weight: 600">setup.cfg</div>
+        <p class="bullet"> 
+            This is the lion’s share of the manual editing involved with uploading a package to PyPi. Its going to hold information about the name of the package, the version, who the author is, contact info, etc. The only important thing to note about this file, is that whenever you push new versions of your package to PyPi, you have to change the version number of the package in this file. Everything else will be set up and can be left alone after you first push the version.
+
+            Below is a 'blank' version of a setup.cfg file.
+        </p>
+        <p class="code-snippet">
+            [metadata]<br>
+            name = [PACKAGE_NAME]<br>
+            version = [VERSION]<br>
+            author = [AUTHOR_NAME]<br>
+            author_email = [AUTHOR_EMAIL]<br>
+            description = [PACKAGE_DESCRIPTION]<br>
+            long_description = file: README.md<br>
+            long_description_content_type = text/markdown<br>
+            url = [GITHUB_URL]<br>
+            project_urls =<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug Tracker = [GITHUB_BUGTRACKER_URL]<br>
+            classifiers =<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Programming Language :: Python :: 3<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;License :: OSI Approved :: MIT License<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Operating System :: OS Independent<br><br>
+
+            [options]<br>
+            package_dir =<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= src<br>
+            packages = find:<br>
+            python_requires = >=3.6<br><br>
+
+            [options.packages.find]<br>
+            where = src<br>
+
+        </p><br>
+        
+        <div class="bullet">
+            <p>
+                So there are really only 7 areas we need to concern ourselves with.
+            </p>
+            <div style="font-weight: 600">Package Name:</div>
+            <p class="bullet">
+                This is the name that you will use when downloading your package from pip. <b>IMPORTANT NOTE:</b> The folder found in src needs to be the same name as the package name in the setup.cfg file.
+            </p>
+
+            <div style="font-weight: 600">Version:</div>
+            <p class="bullet">
+                The version of your package.
+            </p>
+            
+            <div style="font-weight: 600">Author:</div>
+            <p class="bullet">
+                The name you want displayed with your package.
+            </p>
+            
+            <div style="font-weight: 600">Author Email:</div>
+            <p class="bullet">
+                While you can leave it blank, this is a way for people to contact you if you so desire.
+            </p>
+            
+            <div style="font-weight: 600">Package Description:</div>
+            <p class="bullet">
+                A quick description of your package for people to view when browsing packages on PyPi.
+            </p>
+            
+            <div style="font-weight: 600">Github URL:</div>
+            <p class="bullet">
+                This doesn’t have to be github, but often is. It's just a way for people who download your package from PyPi to view your github and code a bit easier.
+            </p>
+            
+            <div style="font-weight: 600">Github Bugtracker URL:</div>
+            <p class="bullet">
+                Assuming you’ve linked your github, this is a way for people on PyPi to see what errors have come about with your package. Additionally, it gives users a very easy way to get in contact with the creator of the package should an error arise.
+            </p>
+        </div><br><br><br><br>
+
+
+        <p style="font-weight: 600; font-size: 200%"><u>Building the Package</u></p>
+        Perfect! Now that the folder containing our package is all set up, we need to build it, and upload it to PyPi. We first need to ensure that the package ‘build’ and ‘twine’ are installed and up to date.<br><br><br>
+
+        <p class="code-snippet">>pip install build<br>>pip install twine</p><br><br>
+        
+        Or if you already have the packages installed, you can update them via these commands:<br><br><br>
+
+        <p class="code-snippet">>pip install --upgrade build<br>>pip install --upgrade twine</p><br><br>
+
+        Next, we need to build the python package. So enter a command prompt and navigate to the folder that contains all the files. Then we need to run:<br><br><br>
+
+        <p class="code-snippet">>python -m build</p><br><br>
+
+        This will run for a minute or two and then dump the built package into the /dist folder.<br><br><br><br>
+
+        <p style="font-weight: 600; font-size: 200%"><u>Creating PyPi Account</u></p>
+        Next we need to create an acount on PyPi: <a href="https://pypi.org/account/register/">https://pypi.org/account/register/</a><br><br>
+
+        Then we need to create an API key. I find this way to be consistently the easiest way to push packages to pip.<br><br><br><br>
+
+
+        <p style="font-weight: 600; font-size: 200%"><u>Shipping to PyPi</u></p>
+        After creating an API key, we are ready to ship our package to pip! We will need to do the following command:<br><br><br>
+
+        <p class="code-snippet">>twine upload dist/* -u __token__ -p [API_KEY]</p><br><br>
+
+        Now let's break that command down, in case it is a little confusing.<br><br>
+
+        <div class="bullet">
+            <div style="font-weight: 600">twine upload</div>
+            <p class="bullet">
+                This is the part of the command that will tell twine to upload our package.
+            </p>
+
+            <div style="font-weight: 600">dist/*</div>
+            <p class="bullet">
+                This is the part of the command that tells twine where our package was built.
+            </p>
+
+            <div style="font-weight: 600">-u token</div>
+            <p class="bullet">
+                This is the part of the command designated the username, and since we are using an api key, we give the username ‘__token__’. <b>This is not a placeholder name, it is case sensitive and ‘__token__’ is required as the username when using an API Key.</b>
+            </p>
+
+            <div style="font-weight: 600">-p [API_KEY]</div>
+            <p class="bullet">
+                This is the part of the command designated to the password. Since we are using an API key, we will paste whatever key was given to us by PyPi.
+            </p>
+        </div>
+
+        After this, we can run the command, and viola! Our package is on PyPi and can be installed using pip.<br><br>
+
+        We can test it out by running the command:<br><br>
+
+        <p class="code-snippet">>pip install mypackage</p>
+
+
+
+
+
+    </div>
+
+    <div class="footer">
+        <a href="https://github.com/Solonce">
+            <button class="footer-button">
+                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.0744 2.9938C4.13263 1.96371 4.37869 1.51577 5.08432 1.15606C5.84357 0.768899 7.04106 0.949072 8.45014 1.66261C9.05706 1.97009 9.11886 1.97635 10.1825 1.83998C11.5963 1.65865 13.4164 1.65929 14.7213 1.84164C15.7081 1.97954 15.7729 1.97265 16.3813 1.66453C18.3814 0.651679 19.9605 0.71795 20.5323 1.8387C20.8177 2.39812 20.8707 3.84971 20.6494 5.04695C20.5267 5.71069 20.5397 5.79356 20.8353 6.22912C22.915 9.29385 21.4165 14.2616 17.8528 16.1155C17.5801 16.2574 17.3503 16.3452 17.163 16.4167C16.5879 16.6363 16.4133 16.703 16.6247 17.7138C16.7265 18.2 16.8491 19.4088 16.8973 20.4002C16.9844 22.1922 16.9831 22.2047 16.6688 22.5703C16.241 23.0676 15.6244 23.076 15.2066 22.5902C14.9341 22.2734 14.9075 22.1238 14.9075 20.9015C14.9075 19.0952 14.7095 17.8946 14.2417 16.8658C13.6854 15.6415 14.0978 15.185 15.37 14.9114C17.1383 14.531 18.5194 13.4397 19.2892 11.8146C20.0211 10.2698 20.1314 8.13501 18.8082 6.83668C18.4319 6.3895 18.4057 5.98446 18.6744 4.76309C18.7748 4.3066 18.859 3.71768 18.8615 3.45425C18.8653 3.03823 18.8274 2.97541 18.5719 2.97541C18.4102 2.97541 17.7924 3.21062 17.1992 3.49805L16.2524 3.95695C16.1663 3.99866 16.07 4.0147 15.975 4.0038C13.5675 3.72746 11.2799 3.72319 8.86062 4.00488C8.76526 4.01598 8.66853 3.99994 8.58215 3.95802L7.63585 3.49882C7.04259 3.21087 6.42482 2.97541 6.26317 2.97541C5.88941 2.97541 5.88379 3.25135 6.22447 4.89078C6.43258 5.89203 6.57262 6.11513 5.97101 6.91572C5.06925 8.11576 4.844 9.60592 5.32757 11.1716C5.93704 13.1446 7.4295 14.4775 9.52773 14.9222C10.7926 15.1903 11.1232 15.5401 10.6402 16.9905C10.26 18.1319 10.0196 18.4261 9.46707 18.4261C8.72365 18.4261 8.25796 17.7821 8.51424 17.1082C8.62712 16.8112 8.59354 16.7795 7.89711 16.5255C5.77117 15.7504 4.14514 14.0131 3.40172 11.7223C2.82711 9.95184 3.07994 7.64739 4.00175 6.25453C4.31561 5.78028 4.32047 5.74006 4.174 4.83217C4.09113 4.31822 4.04631 3.49103 4.0744 2.9938Z" fill="#0F0F0F"></path> <path d="M3.33203 15.9454C3.02568 15.4859 2.40481 15.3617 1.94528 15.6681C1.48576 15.9744 1.36158 16.5953 1.66793 17.0548C1.8941 17.3941 2.16467 17.6728 2.39444 17.9025C2.4368 17.9449 2.47796 17.9858 2.51815 18.0257C2.71062 18.2169 2.88056 18.3857 3.05124 18.5861C3.42875 19.0292 3.80536 19.626 4.0194 20.6962C4.11474 21.1729 4.45739 21.4297 4.64725 21.5419C4.85315 21.6635 5.07812 21.7352 5.26325 21.7819C5.64196 21.8774 6.10169 21.927 6.53799 21.9559C7.01695 21.9877 7.53592 21.998 7.99999 22.0008C8.00033 22.5527 8.44791 23.0001 8.99998 23.0001C9.55227 23.0001 9.99998 22.5524 9.99998 22.0001V21.0001C9.99998 20.4478 9.55227 20.0001 8.99998 20.0001C8.90571 20.0001 8.80372 20.0004 8.69569 20.0008C8.10883 20.0026 7.34388 20.0049 6.67018 19.9603C6.34531 19.9388 6.07825 19.9083 5.88241 19.871C5.58083 18.6871 5.09362 17.8994 4.57373 17.2891C4.34391 17.0194 4.10593 16.7834 3.91236 16.5914C3.87612 16.5555 3.84144 16.5211 3.80865 16.4883C3.5853 16.265 3.4392 16.1062 3.33203 15.9454Z" fill="#0F0F0F"></path> </g></svg>
+            </button>
+        </a>
+        <a href="index.html">
+            <button class="footer-button">
+                <svg fill="#000000" width="64px" height="64px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" d="M192,1.42108547e-14 L384,153.6 L384,384 L213.333333,384 L213.333333,277.333333 L170.666667,277.333333 L170.666667,384 L1.42108547e-14,384 L1.42108547e-14,153.6 L192,1.42108547e-14 Z M192,53.3333333 L42.6666667,170.666667 L42.6666667,341.333333 L128,341.333333 L128,234.666667 L256,234.666667 L256,341.333333 L341.333333,341.333333 L341.333333,170.666667 L192,53.3333333 Z" transform="translate(64 64)"></path></g></svg>
+            </button>
+        </a>
+        <a href="https://www.linkedin.com/in/solomon-ince/">
+            <button class="footer-button">
+                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z" fill="#0F0F0F"></path> <path d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z" fill="#0F0F0F"></path> <path d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z" fill="#0F0F0F"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z" fill="#0F0F0F"></path> </g></svg>
+            </button>
+        </a>
+    </div>
+
+    <script src="getTime.js"></script>
+</body>
+</html>
