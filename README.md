@@ -5,9 +5,9 @@
 
 - 🌱 I’m currently learning **AI Frameworks, HuggingFace Integration Techniques, Automation of AI Tasks**
 
-- 👨‍💻 All of my projects are available at [My Github](https://github.com/Solonce)
+- 👨‍💻 All of my projects are available at [my github](https://github.com/Solonce)
 
-- 📝 I regularly write articles on [Various demos, project releases, and walk-throughs.](Various demos, project releases, and walk-throughs.)
+- 📝 I regularly write articles on **various demos, project releases, and walk-throughs.**
 
 - 📫 How to reach me **solomon@solonce.com**
 
