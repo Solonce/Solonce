@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Solomon (Solonce) Ince</h1>
-<h3 align="center">A AI/ML focused programmer</h3>
+<h3 align="center">An AI/ML focused programmer</h3>
 
 - 🔭 I’m currently working on [HFAutogen](https://github.com/Solonce/HFAutogen)
 
