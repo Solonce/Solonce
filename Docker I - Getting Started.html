@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Me | Solonce</title>
+    <title>Docker I | Getting Started</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0;">
-    <meta name="description" content="A simple contact me page where you can find a variety of different ways to reach out and contact me. Feel free to reach out with questions, ideas, or offers.">
     <link rel="stylesheet" type="text/css" href="static/stylesheet.css">
     <link rel="stylesheet" href="static/dracula.css">
     <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"/>
 
-    <meta name="description" content="Discover HFAutogen, a Python package for quick, zero-cost prototyping of multi-agent architectures using Hugging Face's Serverless Inference API for efficient communication between agents.">
-    <meta name="keywords" content="HFAutogen, multi-agent architecture, Python package, serverless inference, Hugging Face, prototyping, AI development, autonomous code generation, multi-agent communication">
+    <meta name="keywords" content="Docker, containerization, getting started with Docker, Docker tutorial, Docker setup, Docker installation, Docker images, Docker containers, Dockerfile, software deployment, virtualization">
+
+    <meta name="description" content="This guide introduces Docker, explaining its basics and how to get started with setting up containers from scratch. Learn about Docker's benefits, core concepts, container management, and how to create and run Docker images with practical examples.">
+
 
 
 </head>
@@ -35,145 +36,181 @@
     <div class="main-divider"></div>
     <div class="article-container">
         <h1><p class="article-title-head">Docker I:</p></h1>
-        <h2><p class="article-title-desc">Getting Started w/ Docker</p></h2>
+        <h2><p class="article-title-desc">Getting Started & Setting Up Container From Sratch!</p></h2>
     </div>
     <div class="article-body">
+        <img class="main-img" src="static/img/docker/dockerimg.webp">
+        <div class="small-spacer"></div>
         <div class="title-in-text">Introduction:</div>
         <div>
                 <div class="title-in-body">What is Docker?<br><br></div>
         
-               Docker is a tool that allows the deployment of applications inside software containers. THis ensures a layer of abstraction and automation of operating system-level virtualization on Linux(or windows/macos)That might sound like a lot, but all that means is we can easily run applications in interesting or complex ways to yield a certain behavior.<br><br><br>
+               Docker is a tool that allows the deployment of applications inside software containers. This ensures a layer of abstraction and automation of operating system-level virtualization on Linux(or windows/macos). That might sound like a lot, but all that means is we can easily run applications in interesting or complex ways to yield a certain behavior.
         </div>
+        <div class="small-spacer"></div>
         <div>
             <div class="title-in-body">Why use Docker?<br><br></div>
             <b>Env Isolation and Consistency.</b> - One of the big benefits is that docker functionality provides a consistent environment for certain applications to run. It effectively eliminates the “it works on my machine” problem.<br><br>
 
             <b>Resource Efficiency</b> - Docker containers share the host system’s kernel, which makes them much more lightweight than a virtual machine. This means that containers require less compute and memory resources as well.<br><br>
 
-            <b>Fast Deployment and Scaling</b> - Docker containers have the ability to be started, stopped, and replicated very quickly. This is of particular interest if you are making a container for large-scale use.<br><br><br>
+            <b>Fast Deployment and Scaling</b> - Docker containers have the ability to be started, stopped, and replicated very quickly. This is of particular interest if you are making a container for large-scale use.
         </div>
+        <div class="large-spacer"></div>
         <div class="title-in-text">Core Concepts:</div>
         <div>
             <div class="title-in-body">Containers vs. Virtuals Machines<br><br></div>
-            Containers are far cheaper to operate than virtual machines, resource-wise. Virtual machines have a LOT of overhead compared to containers. They need a copy of the entire system, as opposed to containers which just share the host system's kernel.<br><br>
+            Containers are far cheaper to operate than virtual machines, resource-wise. Virtual machines have a LOT of overhead compared to containers. They need a copy of the entire system, as opposed to containers which just share the host system's kernel.
         </div>
+        <div class="small-spacer"></div>
         <div>
-            <div class="title-in-body">Images, Containers, and Registries<br><br></div>
+            <div class="title-in-body">Images & Containers<br><br></div>
             <b>Images</b> - An image is a very lightweight executable package that includes everything needed to run a piece of software. This includes items such as the code, runtime, system tools, libraries and settings.<br><br>
 
-            <b>Containers</b> - Containers on the other hand are instances of Docker images that run the software that image provides.<br><br><br>
+            <b>Containers</b> - Containers on the other hand are instances of Docker images that run the software that image provides.
         </div>
-
+        <div class="large-spacer"></div>
         <div class="title-in-text">Installing:</div>
         <div>
-        <div class="title-in-body">Installation Windows<br><br></div>
-        After you have docker installed on your machine, getting it set up is really quiet simple. Docker can run on linux, macOS, and Windows alike. The specific system requirements vary depending on the operating system.<br><br>
-
-        <div class="title-in-body">Alternate Installation<br><br></div>
+            Docker installation instructions can vary depending on what distro or OS you are using. Please refer to <a href="https://docs.docker.com/engine/install/">the docker installation documentation page</a> to determine the steps needed for your setup.
         </div>
-
+        <div class="large-spacer"></div>
         <div class="title-in-text">How to use Docker:</div>
         <div>
             <div class="title-in-body">Running your first container<br><br></div>
             Running your first container is really easy. Let's take a look at a command and break it down:<br><br>
 
-            $ docker run -it --rm tensorflow/tensorflow bash<br><br>
+            <pre class="code-single-line-pre"><code class="code-single-line">docker run -it --rm tensorflow/tensorflow bash</code></pre><br><br>
+            <div class="bullet-points">
+                <div class="bullet-wrapper">
+                    <b>- 'docker run'</b><div class="indented-bullet">The command used to run a docker container. It tells docker to create a new container using a specific image.</div><br>
+                </div>
+                <div class="bullet-wrapper">
+                    <b>- '-it'</b><div class="indented-bullet">These are two flags being passed. -i (--interactive) allows you to interact with Docker's STDIN while it’s being run. -t (--tty) allocates a pseudo-tty terminal that connects your terminal to Docker's internal STDIN and STDOUT.</div><br>
+                </div>
+                <div class="bullet-wrapper">
+                    <b>- '-rm'</b><div class="indented-bullet">A flag to indicate that the container will be removed after the user has exited it. This is to help save on space.</div><br>
+                </div>
+                <div class="bullet-wrapper">
+                    <b>- 'tensorflow/tensorflow'</b><div class="indented-bullet">This is the name of the Docker image to be used for the container. I am using the <a href="https://hub.docker.com/r/tensorflow/tensorflow">official TensorFlow image</a> from Docker hub in this example.</div><br>
+                </div>
+                <div class="bullet-wrapper">
+                    <b>- 'bash'</b><div class="indented-bullet">This is the command that will be run inside the container once it starts. In this case it's starting a bash shell. Which provides you with an interactive CMD within the container you can use to have plenty of fun!</div>
+                </div>
+            </div>
 
 
-            ```docker run``` is the command used to run a docker container. It tells docker to create a new container using a specific image.<br>
-            ``-it`` is two flags being passed. -i (--interactive) allows you to interact with Docker's STDIN while it’s being run. -t (--tty) allocates a pseudo-tty terminal that connects your terminal to Docker's internal STDIN and STDOUT.<br>
-            ```-rm``` is a flag to indicate that the container will be removed after the user has exited it. This is to help save on space.<br>
-            ```tensorflow/tensorflow``` This is the name of the Docker image to be used for the container. I am using the official TensorFlow image from Docker hub in this example.<br>
-            ```bash``` - This is the command that will be run inside the container once it starts. In this case it's starting a bash shell. Which provides you with an interactive CMD within the container you can use to have plenty of fun!<br><br>
-
-
-
+            <div class="small-spacer"></div>
             <div class="title-in-body">Managing containers<br><br></div>
             There are three really good Docker commands for containers that control their lifecycle.<br><br>
-
-            ```docker start``` - Starts a Docker container<br>
-            ```docker stop``` - Stops a Docker container<br>
-            ```docker rm``` - Removes one or more a Docker container(s) from the system<br><br>
+            <div class="bullet-points">
+                <div class="bullet-wrapper"><b>- docker start</b><div class="indented-bullet">Starts a Docker container</div></div><br>
+                <div class="bullet-wrapper"><b>- docker stop</b><div class="indented-bullet">Stops a Docker container</div></div><br>
+                <div class="bullet-wrapper"><b>- docker rm</b><div class="indented-bullet">Removes one or more a Docker container(s) from the system</div></div>
+            </div>
         </div>
+        <div class="large-spacer"></div>
         <div class="title-in-text">Working with Docker Images</div>
             <div>
-                Pulling an image<br><br>
-                While docker run has the following functionality built in, it can be useful to know how to pull an image directly.<br><br>
+                <div class="title-in-body">Pulling an image</div><br><br>
+                While 'docker run' has the following functionality built in, it can be useful to know how to pull an image directly.<br><br>
 
-                $ docker pull tensorflow/tensorflow<br><br>
+                <pre class="code-single-line-pre"><code class="code-single-line">docker pull tensorflow/tensorflow</code></pre><br>
 
-                The pull command grabs an image from the Docker Hub and pulls it to the local system.<br><br>
+                The pull command grabs an image from the Docker Hub and pulls it to the local system.
+                <div class="small-spacer"></div>
+                <div class="title-in-body">Building a Custom Docker Image with a Dockerfile</div><br>
+                Got a specific idea for a container in mind? Try out a Dockerfile! The Dockerfile is a file that contains all the commands necessary for you to spin up a Docker image. Lets take a look at an example file:<br><br>
+                <pre class="code-multi-line-pre"><code class="code-multi-line"># Use an official Python runtime as a parent image
+FROM python:3.8-slim
 
-                Building a Docker Image with a Dockerfile<br>
-                Got a specific idea for a container in mind? Try out a Dockerfile! The Dockerfile is a text file that contains all the commands necessary for you to spin up a Docker image. Lets take a look at an example file:<br><br>
+# Set the working directory in the container
+WORKDIR /app
 
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-                # Use an official Python runtime as a parent image<br>
-                FROM python:3.8-slim<br><br>
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-                # Set the working directory in the container<br>
-                WORKDIR /app<br><br>
+# Make port 80 available to the world outside this container
+EXPOSE 80
 
-                # Copy the current directory contents into the container at /app<br>
-                COPY . /app<br><br>
+# Define environment variable
+ENV NAME World
 
-                # Install any needed packages specified in requirements.txt<br>
-                RUN pip install --no-cache-dir -r requirements.txt<br>
+# Run app.py when the container launches
+CMD ["python", "app.py"]</code></pre>
 
-                # Make port 80 available to the world outside this container<br>
-                EXPOSE 80<br><br>
+                <div class="small-spacer"></div>
+                <div class="title-in-body">This can seem like a lot so lets go over it!</div><br><br>
 
-                # Define environment variable<br>
-                ENV NAME World<br><br>
+                <pre class="code-multi-line-pre"><code class="plain-text-code code-multi-line" style="color: white;">FROM - Every Dockerfile starts with a FROM instruction that specifies 
+the base image from what you're trying to put into an container. For 
+example, FROM python:3.8-slim starts a Docker image with the 
+Python 3.8-slim base image.<br><br>
 
-                # Run app.py when the container launches<br>
-                CMD ["python", "app.py"]<br><br>
+WORKDIR - This instruction sets the working directory for any RUN,
+CMD, ENTRYPOINT, COPY, and ADD command. For example, WORKDIR /app 
+sets the base working directory for all commands to ‘/app’<br><br>
 
+COPY/ADD - These instructions will copy or add files and directories 
+from the host machine to the image. COPY is the most straight forward, 
+but ADD has additional functionality such as remote URL support and 
+tar extraction. For example, COPY . /app mean to copy the current 
+pwd to the /app directory in the image. Note the ‘.’ to denote the 
+current pwd.<br><br>
 
-                This can seem like a lot so lets go over it!<br><br>
+RUN - This instruction will execute a set of commands in a new layer 
+on top of the current image and commit the changes to the image.  
+For example, RUN pip install --no-cache-dir -r requirements.txt installs
+a list of python packages from requirements.txt. Recall, 
+this is a file that would be present in the pwd as the pwd has been 
+copied into the image.<br><br>
 
+EXPOSE - This instruction allows the Docker Image to listen on a specific 
+network port during runtime. For example, EXPOSE 80 allows the docker 
+container running the image to be communicated with via port 80.<br><br>
 
-                FROM - Every Dockerfile starts with a FROM instruction that specifies the base image from what you're trying to put into an container. For example, FROM python:3.8-slim starts a Docker image with the Python 3.8-slim base image.<br><br>
-
-                WORKDIR - This instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD command. For example, WORKDIR /app sets all following pwd’s start with ‘/app’<br><br>
-
-                COPY/ADD - These instructions will copy or add files and directories from the host machine to the image. COPY is the most straight forward, but ADD has additional functionality such as remote URL support and tar extraction. For example, COPY . /app mean to copy the current pwd to the /app directory in the image. Note the ‘.’ to denote the current pwd.<br><br>
-
-                RUN - This instruction will execute a set of commands in a new layer on top of the current image and commit the changes to the image.  For example, RUN pip install --no-cache-dir -r requirements.txt runs that downloads a list of python packages from requirements.txt. Recall, this is a file that would be present in the pwd as the pwd has been copied into the image.<br><br>
-
-                EXPOSE - This instruction allows the Docker Image to listen on a specific network port during runtime. For example, EXPOSE 80 allows the docker container running the image to be communicated with via port 80.<br><br>
-
-                CMD/ENTRYPOINT - These instructions define the default command to run when the container starts. CMD sets the command and arguments, but that can be overridden by the command line. ENTRYPOINT configured a container to run as an exe, with this parameters then passed into a CMD.<br><br>
+CMD/ENTRYPOINT - These instructions define the default command to run 
+when the container starts. CMD sets the command and arguments, but that 
+can be overridden by the command line. ENTRYPOINT configured a container 
+to run as an exe, with this parameters then passed into a CMD.</code></pre><br>
 
                 Okay, now that we covered that, let’s go over how to build the image. It’s really quite simple! <b>Ensure that you are in the working directory of the Dockerfile.</b><br><br>
 
-                docker build myimage .<br><br>
+                <pre class="code-single-line-pre"><code class="code-single-line">docker build myimage .</code></pre><br>
 
                 Believe it or not that’s all we need to get started with our next step. Let’s break it down though.<br><br>
 
+                <div class="bullet-points">
+                    <div class="bullet-wrapper"><b>- 'docker build'</b><div class="indented-bullet">Docker command used to build an image.<br></div></div>
+                    <div class="bullet-wrapper"><b>- 'myimage'</b><div class="indented-bullet">The name of the Docker container.<br></div></div>
+                    <div class="bullet-wrapper"><b>- '.'</b><div class="indented-bullet">The file directory to look at when building the image. In this case ‘.’ indicates the pwd, which is where the Dockerfile is also located.<br><br></div></div>
+                </div><br>
 
-                ```docker build``` - Docker command used to build an image.<br>
-                ``` myimage``` - The name of the Docker container.<br>
-                ```.``` - The file directory to look at when building the image. In this case ‘.’ indicates the pwd, which is where the Dockerfile is also located.<br><br>
+                Next we have to run the docker.<br><br>
 
-                Next we java to run the docker.<br><br>
+                <pre class="code-single-line-pre"><code class="code-single-line">docker run -d -p 80:80 myimage</code></pre><br>
 
-                docker run -d -p 80:80 myimage<br><br>
-
-                Now we should have the container up and running.<br>
-                ```docker run``` - Docker command used to run a docker container.<br>
-                ```-d``` This command allows the container to run in the background<br>
-                ```-p 80:80``` This command matches the port of the host to the port on the Docker container. Where the first ‘80’ represents the host and the second ‘80’ represents the container.<br><br>
+                Now we should have the container up and running. Let's break down that command first though!<br><br>
+                <div class="bullet-points">
+                    <div class="bullet-wrapper"><b>- 'docker run'</b><div class="indented-bullet">Docker command used to run a docker container.</div></div><br>
+                    <div class="bullet-wrapper"><b>- '-d'</b><div class="indented-bullet">This command allows the container to run in the background</div></div><br>
+                    <div class="bullet-wrapper"><b>- '-p 80:80'</b><div class="indented-bullet">This command matches the port of the host to the port on the Docker container. Where the first ‘80’ represents the host and the second ‘80’ represents the container.</div></div>
+                </div><br>
 
                 Ensure the docker is running<br><br>
                 You can check the status of the container to see if its running with the following command:<br><br>
-                docker ps<br><br>
+                <pre class="code-single-line-pre"><code class="code-single-line">docker ps<br><br></code></pre>
             </div>
-                <div class="title-in-text">Conclusion</div>
-                <div>
-                    We’ve covered the essentials of Docker, highlighting its ability to streamline application deployment across various environments. By embracing Docker, developers and operations teams can achieve a high level of efficiency and consistency in their workflows, setting a strong foundation for more advanced Docker usage and container management in the future.
-                </div>
+            <div class="large-spacer"></div>
+            <div class="title-in-text">Conclusion</div>
+            <div>
+                We’ve covered the essentials of Docker, highlighting its ability to streamline application deployment across various environments. By embracing Docker, developers and operations teams can achieve a high level of efficiency and consistency in their workflows, setting a strong foundation for more advanced Docker usage and container management in the future.
+            </div>
 
+            <div class="small-spacer"></div>
     </div>
     <div class="footer">
         <a href="https://github.com/Solonce">
@@ -192,12 +229,14 @@
             </button>
         </a>
     </div>
-    <script src="highlight.min.js"></script>
+
+    <script src="getTime.js"></script>
+    <script src="static/js/highlight.min.js"></script>
     <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
     <script>hljs.addPlugin(new CopyButtonPlugin());</script>
 
     <script>hljs.highlightAll();</script>
     
-    <script src="getTime.js"></script>
+    <script src="static/js/getTime.js"></script>
 </body>
 </html>

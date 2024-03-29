@@ -40,18 +40,19 @@
     </div>
     <div class="article-body">
         <div>
-            <img style="border-radius: 10px; margin: 0 auto 0 auto;" src="static/img/genaiimg/genai.png">
-            <a style="display: block; background-color: rgba(0, 0, 0, 0.25); border-style: solid; border-color: black; border-radius: 10px; text-decoration: none; color: black; text-align: center; width: 10vw; margin: 1vh auto 0 auto;" href="https://github.com/Solonce/genai">Github Repository</a>
+            <img class="main-img" style="width: 60%" src="static/img/genaiimg/genai.png">
+            <a class="main-img-button" href="https://github.com/Solonce/genai">Github Repository</a>
         </div>
+        <div class="small-spacer"></div>
         <div class='title-in-text'>
-            <br><br>
             What is genai?
         </div>
         <div>
             Genai is an efficient and lightweight artificial intelligence inference tool that can be accessed directly from the command line. This makes it an excellent choice for developers and AI enthusiasts who prefer quick and straightforward AI model interactions.<br><br>
 
-            One of the strengths of Genai is its ability to utilize HuggingFace's Inference API. That API is a robust platform known for its wide array of pre-trained AI models and its capability to facilitate seamless AI inferences. Specifically, GenAI leverages the Mistral-7B-Instruct-v0.2 model hosted on HuggingFace by accessing a serverless endpoint. This means that users can execute AI inferences without worrying about managing the underlying infrastructure, leading to a hassle-free experience.<br><br>
+            One of the strengths of Genai is its ability to utilize HuggingFace's Inference API. That API is a robust platform known for its wide array of pre-trained AI models and its capability to facilitate seamless AI inferences. Specifically, GenAI leverages the Mistral-7B-Instruct-v0.2 model hosted on HuggingFace by accessing a serverless endpoint. This means that users can execute AI inferences without worrying about managing the underlying infrastructure, leading to a hassle-free experience.
         </div>
+        <div class="large-spacer"></div>
         <div class='title-in-text'>
             <br><br>
             Why genai?
@@ -59,9 +60,9 @@
         <div>
             The serverless nature of the HuggingFace Inference API, specifically in regard to the Mistral-7B-Instruct-v0.2 model, ensures that genai will always have hosted, speedy inference. This makes GenAI a scalable and cost-effective solution for running AI inferences from extremely lightweight machines.<br><br>
 
-            Genai is of particular interest for those who frequently use the command line for their work. It addresses the need for quick answers and solutions in the daily routine of developers, system administrators, and other technical professionals all from the command line. Before Genai, finding a solution that was both free of cost and light on resources was challenging. Now, with GenAI, users can obtain fast and accurate results without leaving their command line environment.<br><br>
-
+            Genai is of particular interest for those who frequently use the command line for their work. It addresses the need for quick answers and solutions in the daily routine of developers, system administrators, and other technical professionals all from the command line. Before Genai, finding a solution that was both free of cost and light on resources was challenging. Now, with GenAI, users can obtain fast and accurate results without leaving their command line environment.
         </div>
+        <div class="large-spacer"></div>
         <div class='title-in-text'>
             <br><br>
             Installation:
@@ -69,15 +70,16 @@
         <div>
             Installation is very simple, and only requires two steps. Installing the package, and setting the API key.<br><br>You will need to generate a HuggingFace Inference API key. This can be done <a href="https://huggingface.co/docs/api-inference/en/quicktour#get-your-api-token">here.</a><br><br>
             <p class="code-block-header"><b>Installing via pip</b></p>
-            <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%; height: 5vh;">pip install genai-cmd</code></pre>
+            <pre class="code-single-line-pre"><code class="code-single-line">pip install genai-cmd</code></pre>
             <p class="code-block-header"><b>Setting up API key</b></p>
-            <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%; height: 5vh;">genai -S hf_xxxxxxxxxxxxxxxxxx</code></pre>
+            <pre class="code-single-line-pre"><code class="code-single-line">genai -S hf_xxxxxxxxxxxxxxxxxx</code></pre>
         </div>
+        <div class="large-spacer"></div>
         <div class="title-in-text"><br><br>Usage:</div>
         <div>
             Here are some basic intructions on the usage of how to operate the genai tool. Also included in this section are the relatvent flags.<br><br>
-            <div class="title-in-text" style="margin:0 auto 1vh 0;"><br>Flags:</div>
-            <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%;">-t, --text-data      Used to ask a question to genai directly without entering the shell.
+            <div class="title-in-body">Flags:</div><br>
+            <pre class="code-multi-line-pre"><code class="code-multi-line">-t, --text-data      Used to ask a question to genai directly without entering the shell.
 -r, --raw-data       Same as -t without text formatting.
 
 -c, --context        Used to set the temporary context genai answers prompt(s) under. Works with shell. (ex. "You are a pirate", "You are an angry old man")
@@ -85,13 +87,14 @@
 -s, --seconds        Used to set the maximum time a response will take to generate. Default is 3. Works with shell.
 
 -C, --reset-context  Used to set the default context genai answers all prompts under. (ex. "You are a pirate", "You are an angry old man")
--S, --set-key        Used to set the HuggingFace Inference API key needed for genai to operate.</code></pre><br>
-            <div class="title-in-text" style="margin:0 auto 1vh 0;">Enter a shell:</div>
+-S, --set-key        Used to set the HuggingFace Inference API key needed for genai to operate.</code></pre>
+            <div class="small-spacer"></div>
+            <div class="title-in-body">Enter a shell:</div><br>
             <div>
                 <p class="code-block-header"><b>Input:</b></p>
-                <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%; height: 5vh;">genai</code></pre>
+                <pre class="code-single-line-pre"><code class="code-single-line">genai</code></pre>
                 <p class="code-block-header">Output:</p>
-                <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%;">                                                     88  
+                <pre class="code-multi-line-pre"><code class="code-multi-line">                                                     88  
                                                      ""  
                                                          
         ,adPPYb,d8  ,adPPYba, 8b,dPPYba,  ,adPPYYba, 88  
@@ -112,12 +115,13 @@
 
       genai>
                 </code></pre>
+                <div class="small-spacer"></div>
                 
-                <div class="title-in-text" style="margin:0 auto 1vh 0;"><br>One Line Inference:</div>
+                <div class="title-in-body">One Line Inference:</div><br>
                 <p class="code-block-header"><b>Input:</b></p>
-                <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%; height: 5vh;">genai -t "How do I reverse a string in python?"</code></pre>
+                <pre class="code-single-line-pre"><code class="code-single-line">genai -t "How do I reverse a string in python?"</code></pre>
                 <p class="code-block-header">Output:</p>
-                <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%;">
+                <pre class="code-multi-line-pre"><code class="code-multi-line">
        genai:
 
       ┌─────────────────────────────
@@ -128,7 +132,7 @@
             </div>
         </div>
 
-
+        <div class="large-spacer"></div>
         <div class='title-in-text'>
             <br><br>
             Examples:
@@ -136,8 +140,8 @@
         <div>
             Here are some examples of what exactly genai can provide. While this is dependant on the model, the examples will be a show of the default context.<br><br>
             <div>
-                <div class="title-in-text" style="margin:0 auto 1vh 0;"><br>Programming Inference:</div>
-                <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%;">genai> How do I get only even numbers from an array in python?
+                <div class="title-in-body">Programming Inference:</div><br>
+                <pre class="code-multi-line-pre"><code class="code-multi-line">genai> How do I get only even numbers from an array in python?
 
   ┌─────────────────────────────
   │ [1, 2, 3, 4, 5]
@@ -145,9 +149,9 @@
   │ filter(lambda x: x % 2 == 0, [1, 2, 3, 4, 5])
   └─────────────────────────────</code></pre>
             </div>
-
-                <div class="title-in-text" style="margin:0 auto 1vh 0;"><br>Writing/Storytelling Inference with Flags:</div>
-                <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%;">>genai -l 200 -s 5 -t "Write me a simple short story from the perspective of a rock."
+            <div class="small-spacer"></div>    
+            <div class="title-in-body">Writing/Storytelling Inference with Flags:</div><br>
+            <pre class="code-multi-line-pre"><code class="code-multi-line">>genai -l 200 -s 5 -t "Write me a simple short story from the perspective of a rock."
 
    genai:
 
@@ -161,10 +165,9 @@
   │ the world allows.
   └─────────────────────────────
 </code></pre>
-            </div>
-
-                <div class="title-in-text" style="margin:0 auto 1vh 0;"><br>Supply Context for Inference:</div>
-                <pre style="width: 35vw; margin: auto;"><code style="border-radius: 10px; font-size: 65%;">>genai -t "How are you today?" -c "You have been cursed by a witch! You can only respond as a pirate!"
+            <div class="small-spacer"></div>
+                <div class="title-in-body">Supply Context for Inference:</div><br>
+                <pre class="code-multi-line-pre"><code class="code-multi-line">>genai -t "How are you today?" -c "You have been cursed by a witch! You can only respond as a pirate!"
 
    genai:
 
@@ -176,7 +179,9 @@
   └─────────────────────────────
 
 </code></pre>
+            </div>
 
+        <div class="large-spacer"></div>
         <div class='title-in-text'>
             <br><br>
             Who stands to benefit?
@@ -199,6 +204,7 @@
             By lowering the barrier to AI inference and making it accessible directly from the command line, Genai provides quick and easy access to powerful AI capabilities, making it a valuable tool for a wide range of users across different sectors.<br><br><br>
         </div>
 
+        <div class="large-spacer"></div>
         <div class='title-in-text'>
             Closing Remarks.
         </div>

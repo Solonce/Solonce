@@ -13,6 +13,9 @@ body {
     /*background-color: #faf8d7;*/
     overflow-x: hidden;
 }
+.plain-text-code span {
+    color:inherit !important;
+}
 
 
 html {
@@ -49,6 +52,27 @@ html {
 /* Style the container */
 .centered-element {
     text-align: center;
+}
+
+.main-img {
+    border-radius: 10px; 
+    border-style: solid; 
+    margin: 0 auto 0 auto; 
+    height: 40%; 
+    width: 40%;
+}
+
+.main-img-button {
+    display: block; 
+    background-color: rgba(0, 0, 0, 0.25); 
+    border-style: solid; 
+    border-color: black; 
+    border-radius: 10px; 
+    text-decoration: none; 
+    color: black; 
+    text-align: center; 
+    width: 10vw; 
+    margin: 1vh auto 0 auto;
 }
 
 .title-element {
@@ -195,14 +219,18 @@ html {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 30vw;
-    max-height: 30vw;
+
 }
 
 .title-in-text {
     font-size: 4vh;
-    margin: 0 0 3vh 0;
+    padding: 0 0 3vh 0;
+    margin: 0 0 1.5vh 0;
+    border-width: 0 0 3px 0;
     font-weight: 600;
+    border-style: solid;
+    text-align: center;
+    width: 70%;
 }
 
 .title-in-body {
@@ -242,7 +270,148 @@ html {
   border-color: #dcd0a1;
 }
 
+.code-block {
+    border-radius: 10px; 
+    max-width: 100%;
+    max-height: 50vh;
+    overflow: scroll;
+    margin: 10px;
+}
 
+.code-multi-line-pre {
+    width: 35vw; 
+    margin: auto;
+}
+
+.code-multi-line {
+    border-radius: 10px; 
+    font-size: 65%;
+}
+
+.code-single-line-pre {
+    width: 35vw; 
+    margin: auto;
+}
+
+.code-single-line {
+    border-radius: 10px; 
+    font-size: 65%; 
+    height: 5vh;
+}
+
+.image-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 50%;
+    font-size: 75%;
+}
+
+
+.link a:hover {
+    color: #141414;
+}
+
+.link a:visited {
+    color: black;
+}
+
+.link a:active {
+    color: black;
+}
+
+
+.code-snippet {
+    display: block;
+    background: rgba(0, 0, 0, .125);
+    width: 75%;
+    margin: auto;
+
+}
+
+.bullet {
+	margin-left: 2vw;
+}
+
+.footer {
+    display: flex;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 3px 0px 0px 0px;
+    border-color: black;
+    width: 65vw;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    height: 6vw;
+}
+
+
+.footer-button:hover {
+  background-color: #fff8d7;
+  color: white;
+  border-color: black;
+  box-shadow: 0 0 20px grey;
+  transform: scale(1.1);
+}
+
+.footer-button a:hover {
+  fill: white;
+}
+
+.footer-button:active {
+  background-color: #dcd0a1;
+  color: white;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+.section-header {
+	font-weight: 600; 
+	font-size: 200%;
+}
+
+
+
+.code-block-header{
+    margin:0 auto 0 5vw;
+}
+
+.bullet-points {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 0 auto 0 auto;
+    padding: 20px;
+    width: 80%;
+    border-style: solid;
+    font-size: 1vw;
+
+}
+
+.bullet-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.indented-bullet{
+    display:flex;
+    margin: 0 0 0 3vw;
+}
+
+.large-spacer {
+    display: flex;
+    height: 10vh;
+}
+
+.small-spacer {
+    display: flex;
+    height: 5vh;
+}
 
 @media only screen and (max-width: 1000px) {
 
@@ -252,6 +421,10 @@ html {
 		font-size: 10vw;
         padding: 4vh 0 0 0;
 	}
+
+    .main-img-button {
+        width: 20vw;
+    }
 
 	.date {
 		font-size: 3vw;
@@ -337,13 +510,9 @@ html {
 
 	.article-body {
 		width: 80vw;
-		font-size: 2.25vw;
+		font-size: 2vh;
         padding: 2vw;
 	}
-
-    .article-body img {
-        margin: 0;
-    }
 
 	.title-in-text {
 		font-size: 5.5vw;
@@ -360,99 +529,31 @@ html {
 	}
 
 	.header-segment {
-		width: 40vw;?
+		width: 40vw;
 	}
 
+    .code-single-line {
+        font-size: 60%;
+    }
 
+    .code-single-line-pre {
+        width: 60vw;
+    }
+
+    .code-multi-line {
+        font-size: 60%;
+    }
+
+    .code-multi-line-pre {
+        width: 60vw;
+    }
+
+    .bullet-points {
+        font-size: 1.5vh;
+    }
 }
 
 
-.image-text {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    max-width: 50%;
-    font-size: 75%;
-}
-
-
-.link a:hover {
-    color: #141414;
-}
-
-.link a:visited {
-    color: black;
-}
-
-.link a:active {
-    color: black;
-}
-
-
-.code-snippet {
-    display: block;
-    background: rgba(0, 0, 0, .125);
-    width: 75%;
-    margin: auto;
-
-}
-
-.bullet {
-	margin-left: 2vw;
-}
-
-.footer {
-    display: flex;
-    background-color: transparent;
-    border-style: solid;
-    border-width: 3px 0px 0px 0px;
-    border-color: black;
-    width: 65vw;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: center;
-    height: 6vw;
-}
-
-
-.footer-button:hover {
-  background-color: #fff8d7;
-  color: white;
-  border-color: black;
-  box-shadow: 0 0 20px grey;
-  transform: scale(1.1);
-}
-
-.footer-button a:hover {
-  fill: white;
-}
-
-.footer-button:active {
-  background-color: #dcd0a1;
-  color: white;
-  transition: all 0.25s;
-  -webkit-transition: all 0.25s;
-  box-shadow: none;
-  transform: scale(0.98);
-}
-
-.section-header {
-	font-weight: 600; 
-	font-size: 200%;
-}
-
-.code-block {
-    border-radius: 10px; 
-    max-width: 100%;
-    max-height: 50vh;
-    overflow: scroll;
-    margin: 10px;
-}
-
-.code-block-header{
-    margin:0 auto 0 5vw;
-}
 
 code {
     line-height: initial;
