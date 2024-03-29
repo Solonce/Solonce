@@ -205,6 +205,12 @@ html {
     font-weight: 600;
 }
 
+.title-in-body {
+    font-size: 3vh;
+    margin: 0 0 -2vh 0;
+    font-weight: 600;    
+}
+
 .header {
     top: 0px;
     height: 8vh;
